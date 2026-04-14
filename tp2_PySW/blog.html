@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Revista de viajes con artículos sobre destinos, aventura, cultura y gastronomía. Consejos y relatos de viajeros expertos.">
+    <title>Blog - Revista de Viajes | Turismo Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/styles.css">
+</head>
+<body data-theme="dark">
+    <div data-include-html="partials/header.html"></div>
+
+    <main>
+        <!-- Inputs ocultos para filtrado CSS  -->
+        <input type="radio" name="blog-filter" id="filter-all" checked hidden>
+        <input type="radio" name="blog-filter" id="filter-aventura" hidden>
+        <input type="radio" name="blog-filter" id="filter-cultura" hidden>
+        <input type="radio" name="blog-filter" id="filter-gastronomia" hidden>
+        <input type="radio" name="blog-filter" id="filter-consejos" hidden>
+        <input type="radio" name="blog-filter" id="filter-relatos" hidden>
+
+        <!-- Hero del blog  -->
+        <section class="blog-hero">
+            <div class="blog-hero-bg"></div>
+            <div class="blog-hero-content">
+                <div class="hero-meta">
+                    <span class="hero-badge">Revista Digital</span>
+                    <span class="hero-date">Edición Noviembre 2025</span>
+                </div>
+                <h1>Historias que <span class="highlight">inspiran</span><br>a viajar</h1>
+                <p>Relatos, consejos y guías de viajeros expertos para tu próxima aventura</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-num">12</span>
+                        <span class="stat-label">Artículos</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-num">15k+</span>
+                        <span class="stat-label">Lectores</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-num">4.9★</span>
+                        <span class="stat-label">Valoración</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <span>Descubrir artículos</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Sistema de filtrado por tags  -->
+        <aside class="blog-filters">
+            <div class="filters-container">
+                <span class="filters-label">Filtrar por categoría:</span>
+                <div class="tag-filters">
+                    <label for="filter-all" class="filter-label active">Todos</label>
+                    <label for="filter-aventura" class="filter-label">🏔️ Aventura</label>
+                    <label for="filter-cultura" class="filter-label">🏛️ Cultura</label>
+                    <label for="filter-gastronomia" class="filter-label">🍜 Gastronomía</label>
+                    <label for="filter-consejos" class="filter-label">💡 Consejos</label>
+                    <label for="filter-relatos" class="filter-label">📖 Relatos</label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Grid estilo periódico -->
+        <section class="blog-grid-section">
+            <div class="blog-container">
+                <div class="blog-section-header">
+                    <div>
+                        <span class="section-badge">Últimas publicaciones</span>
+                        <h2>Artículos destacados</h2>
+                    </div>
+                    <div class="issue-badge">
+                        <span class="issue-number">#47</span>
+                        <span class="issue-month">Nov 2025</span>
+                    </div>
+                </div>
+
+                <div class="blog-newspaper-grid">
+                    <!-- Artículo Principal (Featured) -->
+                    <article class="blog-card featured aventura">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&q=80" alt="Trekking en la Patagonia argentina">
+                            <div class="card-category">Aventura</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📅 15 de Noviembre, 2025</span>
+                                <span>✍️ Por Laura Fernández</span>
+                                <span>⏱️ 8 min lectura</span>
+                            </div>
+                            <h3>Los 5 mejores trekking de la Patagonia argentina</h3>
+                            <p>Descubrí los senderos más impresionantes de la Patagonia, desde el Cerro Fitz Roy hasta el Glaciar Perito Moreno. Una guía completa para los amantes de la naturaleza y la aventura extrema.</p>
+                            <div class="card-footer">
+                                <a href="#" class="read-more">Leer artículo completo →</a>
+                                <div class="card-stats">
+                                    <span>❤️ 234</span>
+                                    <span>💬 45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 2 -->
+                    <article class="blog-card cultura">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1552831388-6a0b3575b32a?w=600&q=80" alt="Cultura andina">
+                            <div class="card-category">Cultura</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📅 12 Nov 2025</span>
+                                <span>✍️ Carlos Márquez</span>
+                            </div>
+                            <h4>La cosmovisión andina: un viaje a las raíces</h4>
+                            <p>Conocé las tradiciones, rituales y creencias de los pueblos originarios de los Andes.</p>
+                            <a href="#" class="read-more">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 3 -->
+                    <article class="blog-card gastronomia">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Gastronomía italiana">
+                            <div class="card-category">Gastronomía</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📅 10 Nov 2025</span>
+                                <span>✍️ Martina Rossi</span>
+                            </div>
+                            <h4>Ruta del vino y la pasta por el norte de Italia</h4>
+                            <p>Un recorrido por las regiones de Piamonte, Lombardía y Véneto. Sabores que enamoran.</p>
+                            <a href="#" class="read-more">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 4 -->
+                    <article class="blog-card consejos">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80" alt="Viajero solo">
+                            <div class="card-category">Consejos</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📅 8 Nov 2025</span>
+                                <span>✍️ Sofía Herrera</span>
+                            </div>
+                            <h4>10 cosas que nadie te dice antes de tu primer viaje solo</h4>
+                            <p>Tips esenciales para viajar solo por primera vez sin morir en el intento.</p>
+                            <a href="#" class="read-more">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 5 -->
+                    <article class="blog-card relatos">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" alt="Ruta 40">
+                            <div class="card-category">Relatos</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📅 5 Nov 2025</span>
+                                <span>✍️ Juan Pablo Díaz</span>
+                            </div>
+                            <h4>Crónicas de la Ruta 40: 3000 km de historias</h4>
+                            <p>Un viaje épico por la ruta más larga de Argentina. Gente, paisajes y anécdotas inolvidables.</p>
+                            <a href="#" class="read-more">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 6 -->
+                    <article class="blog-card aventura">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=600&q=80" alt="Buceo Gran Barrera">
+                            <div class="card-category">Aventura</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📅 3 Nov 2025</span>
+                                <span>✍️ Lucas Torres</span>
+                            </div>
+                            <h4>Buceo en la Gran Barrera de Coral: Guía definitiva</h4>
+                            <p>Todo lo que necesitás saber para explorar el arrecife más grande del mundo.</p>
+                            <a href="#" class="read-more">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 7 -->
+                    <article class="blog-card cultura">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80" alt="Japón">
+                            <div class="card-category">Cultura</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📅 30 Oct 2025</span>
+                                <span>✍️ Akiko Tanaka</span>
+                            </div>
+                            <h4>Japón: Tradición y tecnología en armonía</h4>
+                            <p>Descubrí la magia de Tokio, Kioto y Osaka en esta guía cultural única.</p>
+                            <a href="#" class="read-more">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 8 -->
+                    <article class="blog-card gastronomia">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?w=600&q=80" alt="Comida mexicana">
+                            <div class="card-category">Gastronomía</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📅 28 Oct 2025</span>
+                                <span>✍️ Elena Gómez</span>
+                            </div>
+                            <h4>México: un viaje de sabores y colores</h4>
+                            <p>Del mole poblano al mezcal, un recorrido gastronómico por las regiones de México.</p>
+                            <a href="#" class="read-more">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <!-- Artículo 9 -->
+                    <article class="blog-card consejos">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Viaje económico">
+                            <div class="card-category">Consejos</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span>📅 25 Oct 2025</span>
+                                <span>✍️ Pedro Sánchez</span>
+                            </div>
+                            <h4>Cómo viajar por el mundo con poco presupuesto</h4>
+                            <p>Estrategias, apps y trucos para que tu dinero rinda al máximo en cada destino.</p>
+                            <a href="#" class="read-more">Leer más →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Botón cargar más -->
+                <div class="load-more">
+                    <button class="btn-load-more">Cargar más artículos</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de comentarios con avatares CSS -->
+        <section class="comments-section">
+            <div class="comments-container">
+                <div class="comments-header">
+                    <span class="section-badge">💬 Comunidad viajera</span>
+                    <h2>Lo que dicen nuestros lectores</h2>
+                    <p>Más de 1.200 viajeros han compartido sus experiencias</p>
+                </div>
+
+                <div class="comments-grid">
+                    <!-- Comentario 1 -->
+                    <div class="comment-card">
+                        <div class="comment-avatar avatar-1"></div>
+                        <div class="comment-body">
+                            <div class="comment-head">
+                                <strong class="comment-name">María González</strong>
+                                <span class="comment-date">hace 2 horas</span>
+                                <span class="comment-badge">⭐ Viajera frecuente</span>
+                            </div>
+                            <p>¡Qué artículo tan inspirador! Justo estaba planeando un viaje a la Patagonia y estos tips me sirvieron muchísimo. ¿Alguien ha hecho el trekking al Fitz Roy en invierno?</p>
+                            <div class="comment-actions">
+                                <button class="comment-like">❤️ 12</button>
+                                <button class="comment-reply">💬 Responder</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comentario 2 -->
+                    <div class="comment-card">
+                        <div class="comment-avatar avatar-2"></div>
+                        <div class="comment-body">
+                            <div class="comment-head">
+                                <strong class="comment-name">Carlos Rodríguez</strong>
+                                <span class="comment-date">hace 5 horas</span>
+                                <span class="comment-badge">🍜 Foodie</span>
+                            </div>
+                            <p>Excelente guía gastronómica de Italia. Yo agregaría la región de Emilia-Romaña, especialmente Bolonia, que es conocida como la capital de la pasta. ¡Imperdible!</p>
+                            <div class="comment-actions">
+                                <button class="comment-like">❤️ 28</button>
+                                <button class="comment-reply">💬 Responder</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comentario 3 -->
+                    <div class="comment-card">
+                        <div class="comment-avatar avatar-3"></div>
+                        <div class="comment-body">
+                            <div class="comment-head">
+                                <strong class="comment-name">Laura Martínez</strong>
+                                <span class="comment-date">hace 1 día</span>
+                                <span class="comment-badge">🏔️ Aventurera</span>
+                            </div>
+                            <p>Me encantó el relato de la Ruta 40. Me trajo tantos recuerdos de mi viaje el año pasado. La gente del norte argentino es increíblemente cálida. ¡Gracias por compartir!</p>
+                            <div class="comment-actions">
+                                <button class="comment-like">❤️ 45</button>
+                                <button class="comment-reply">💬 Responder</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comentario 4 -->
+                    <div class="comment-card">
+                        <div class="comment-avatar avatar-4"></div>
+                        <div class="comment-body">
+                            <div class="comment-head">
+                                <strong class="comment-name">Javier Fernández</strong>
+                                <span class="comment-date">hace 2 días</span>
+                                <span class="comment-badge">💡 Experto</span>
+                            </div>
+                            <p>Los consejos para viajar solo son oro puro. Viajar solo me cambió la vida y estos tips son perfectos para quienes se animan por primera vez.</p>
+                            <div class="comment-actions">
+                                <button class="comment-like">❤️ 67</button>
+                                <button class="comment-reply">💬 Responder</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comentario 5 -->
+                    <div class="comment-card">
+                        <div class="comment-avatar avatar-5"></div>
+                        <div class="comment-body">
+                            <div class="comment-head">
+                                <strong class="comment-name">Valentina Silva</strong>
+                                <span class="comment-date">hace 3 días</span>
+                                <span class="comment-badge">🏛️ Cultural</span>
+                            </div>
+                            <p>El artículo de Japón me hizo revivir mi viaje. Recomiendo visitar también la isla de Miyajima, es un lugar mágico. ¡Gracias por tan buena información!</p>
+                            <div class="comment-actions">
+                                <button class="comment-like">❤️ 34</button>
+                                <button class="comment-reply">💬 Responder</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario de comentarios -->
+                <div class="comment-form-wrapper">
+                    <h3>Dejá tu comentario</h3>
+                    <form class="comment-form" id="commentForm">
+                        <div class="form-row">
+                            <input type="text" placeholder="Tu nombre" required>
+                            <input type="email" placeholder="Tu email" required>
+                        </div>
+                        <textarea rows="4" placeholder="¿Qué opinás de este artículo? Compartí tu experiencia..." required></textarea>
+                        <button type="submit" class="btn-submit">Publicar comentario</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter-section">
+            <div class="newsletter-container">
+                <div class="newsletter-icon">📧</div>
+                <h2>No te pierdas ningún artículo</h2>
+                <p>Suscribite a nuestro newsletter y recibí las mejores historias de viaje en tu correo</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit">Suscribirme →</button>
+                </form>
+                <p class="newsletter-note">Sin spam. Puedes darte de baja cuando quieras.</p>
+            </div>
+        </section>
+    </main>
+
+    <div data-include-html="partials/footer.html"></div>
+
+    <script src="scripts/script.js"></script>
+    <script>
+    (function() {
+        // ==================== GUARDAR Y MOSTRAR COMENTARIOS ====================
+        
+        // Cargar comentarios guardados del localStorage
+        function loadComments() {
+            const savedComments = localStorage.getItem('blogComments');
+            if (savedComments) {
+                const comments = JSON.parse(savedComments);
+                const commentsGrid = document.querySelector('.comments-grid');
+                
+                // Limpiar comentarios existentes (excepto los que queremos mantener)
+                const existingComments = commentsGrid.querySelectorAll('.comment-card:not(.template)');
+                existingComments.forEach(comment => comment.remove());
+                
+                // Agregar cada comentario guardado
+                comments.forEach(comment => {
+                    addCommentToDOM(comment.name, comment.text, comment.date);
+                });
+            }
+        }
+        
+        // Función para agregar un comentario al DOM
+        function addCommentToDOM(name, text, date) {
+            const commentsGrid = document.querySelector('.comments-grid');
+            const avatarClass = getRandomAvatar();
+            const badgeClass = getRandomBadge();
+            const badgeText = getRandomBadgeText();
+            
+            const newComment = document.createElement('div');
+            newComment.className = 'comment-card new-comment';
+            newComment.innerHTML = `
+                <div class="comment-avatar ${avatarClass}"></div>
+                <div class="comment-body">
+                    <div class="comment-head">
+                        <strong class="comment-name">${escapeHtml(name)}</strong>
+                        <span class="comment-date">${date}</span>
+                        <span class="comment-badge">${badgeText}</span>
+                    </div>
+                    <p>${escapeHtml(text)}</p>
+                    <div class="comment-actions">
+                        <button class="comment-like">❤️ 0</button>
+                        <button class="comment-reply">💬 Responder</button>
+                    </div>
+                </div>
+            `;
+            
+            commentsGrid.appendChild(newComment);
+            
+            // Agregar evento de like al nuevo comentario
+            const likeBtn = newComment.querySelector('.comment-like');
+            likeBtn.addEventListener('click', function() {
+                const text = this.textContent;
+                const match = text.match(/\d+/);
+                if (match) {
+                    let likes = parseInt(match[0]);
+                    this.textContent = `❤️ ${likes + 1}`;
+                    this.style.transform = 'scale(1.1)';
+                    setTimeout(() => this.style.transform = '', 200);
+                }
+            });
+            
+            // Scroll al nuevo comentario
+            newComment.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        // Funciones auxiliares
+        function getRandomAvatar() {
+            const avatars = ['avatar-1', 'avatar-2', 'avatar-3', 'avatar-4', 'avatar-5'];
+            return avatars[Math.floor(Math.random() * avatars.length)];
+        }
+        
+        function getRandomBadge() {
+            const badges = ['⭐ Viajero', '🌍 Explorer', '✈️ Frecuente', '🏔️ Aventurero', '🍜 Foodie', '📖 Relator'];
+            return badges[Math.floor(Math.random() * badges.length)];
+        }
+        
+        function getRandomBadgeText() {
+            const texts = ['⭐ Viajero frecuente', '🌍 Explorer', '✈️ Aventurero', '🏔️ Montañista', '🍜 Foodie', '📖 Relator viajero'];
+            return texts[Math.floor(Math.random() * texts.length)];
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        function getCurrentDate() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const day = now.getDate();
+            const month = now.getMonth() + 1;
+            return `${day}/${month} - ${hours}:${minutes.toString().padStart(2, '0')}`;
+        }
+        
+        // Guardar comentario en localStorage
+        function saveComment(name, text, date) {
+            const savedComments = localStorage.getItem('blogComments');
+            let comments = savedComments ? JSON.parse(savedComments) : [];
+            comments.unshift({ name, text, date });
+            // Limitar a 50 comentarios
+            if (comments.length > 50) comments = comments.slice(0, 50);
+            localStorage.setItem('blogComments', JSON.stringify(comments));
+        }
+        
+        // ==================== FORMULARIO DE COMENTARIOS ====================
+        const commentForm = document.getElementById('commentForm');
+        if (commentForm) {
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const nombreInput = this.querySelector('input[placeholder="Tu nombre"]');
+                const emailInput = this.querySelector('input[placeholder="Tu email"]');
+                const textoInput = this.querySelector('textarea');
+                
+                const nombre = nombreInput.value.trim();
+                const email = emailInput.value.trim();
+                const texto = textoInput.value.trim();
+                
+                if (nombre && texto) {
+                    const date = `hace un momento (${getCurrentDate()})`;
+                    
+                    // Guardar en localStorage
+                    saveComment(nombre, texto, date);
+                    
+                    // Agregar al DOM
+                    addCommentToDOM(nombre, texto, date);
+                    
+                    // Mostrar mensaje de éxito
+                    const btn = this.querySelector('button[type="submit"]');
+                    const originalText = btn.textContent;
+                    btn.textContent = '✓ ¡Comentario publicado!';
+                    btn.disabled = true;
+                    btn.style.background = '#10b981';
+                    
+                    // Limpiar formulario
+                    nombreInput.value = '';
+                    emailInput.value = '';
+                    textoInput.value = '';
+                    
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                        btn.style.background = '';
+                    }, 2000);
+                } else {
+                    alert('Por favor, completá tu nombre y el comentario');
+                }
+            });
+        }
+        
+        // Cargar comentarios al iniciar
+        loadComments();
+        
+        // ==================== LIKES EN COMENTARIOS EXISTENTES ====================
+        const likeBtns = document.querySelectorAll('.comment-like');
+        likeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const text = this.textContent;
+                const match = text.match(/\d+/);
+                if (match) {
+                    let likes = parseInt(match[0]);
+                    this.textContent = `❤️ ${likes + 1}`;
+                    this.style.transform = 'scale(1.1)';
+                    setTimeout(() => this.style.transform = '', 200);
+                }
+            });
+        });
+        
+        // ==================== SCROLL REVEAL ====================
+        const cards = document.querySelectorAll('.blog-card, .comment-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, i * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        cards.forEach(card => observer.observe(card));
+        
+        // ==================== FILTROS CSS ====================
+        const radios = document.querySelectorAll('input[name="blog-filter"]');
+        const labels = document.querySelectorAll('.filter-label');
+        
+        function updateActiveFilter() {
+            const checkedId = document.querySelector('input[name="blog-filter"]:checked')?.id;
+            labels.forEach(label => {
+                const forAttr = label.getAttribute('for');
+                if (forAttr === checkedId) {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+        }
+        
+        radios.forEach(radio => {
+            radio.addEventListener('change', updateActiveFilter);
+        });
+        updateActiveFilter();
+        
+        // ==================== NEWSLETTER ====================
+        const newsletterForm = document.querySelector('.newsletter-section .newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = this.querySelector('button');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✓ ¡Gracias!';
+                btn.disabled = true;
+                this.querySelector('input').value = '';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }, 2000);
+            });
+        }
+        
+        // ==================== BOTÓN CARGAR MÁS ====================
+        const loadMoreBtn = document.querySelector('.btn-load-more');
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', function() {
+                this.textContent = 'Cargando...';
+                setTimeout(() => {
+                    this.textContent = 'Ver más artículos';
+                    alert('Demo: Más artículos se cargarían desde el servidor');
+                }, 1500);
+            });
+        }
+    })();
+</script>
+</body>
+</html>

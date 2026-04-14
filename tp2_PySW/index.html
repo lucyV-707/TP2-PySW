@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Turismo Explorer</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+</head>
+<body>
+    <div data-include-html="partials/header.html"></div>
+
+    <main id="main-content">
+        <!-- ==================== HERO ==================== -->
+        <section class="hero" aria-label="Portada principal">
+            <div class="hero-video-bg">
+                <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&q=80" aria-hidden="true">
+                    <source src="https://cdn.coverr.co/videos/coverr-sunrise-in-paradise-1406/1080p.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+
+            <div class="hero-content">
+                <div class="hero-badge" aria-label="Novedad">✦ Más de 200 destinos disponibles</div>
+                <h1>Explorá el mundo<br /><em>a tu manera</em></h1>
+                <p>Tu próxima aventura comienza aquí. Descubrí destinos únicos, paquetes a medida y las mejores agencias de turismo.</p>
+
+                <div class="hero-actions">
+                    <a href="destinos.html" class="btn btn-primary" aria-label="Ver destinos disponibles">
+                        Explorar destinos
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="agencias.html" class="btn btn-outline">Ver agencias</a>
+                </div>
+
+                <form class="hero-search" action="destinos.html" method="get" role="search" aria-label="Buscador de destinos">
+                    <label class="visually-hidden" for="hero-destino">Destino</label>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                    <input id="hero-destino" name="destino" type="text" class="hero-search-input" placeholder="¿A dónde querés ir?" aria-label="Ingresá tu destino" />
+                    <select name="categoria" aria-label="Categoría de destino">
+                        <option value="">Categoría</option>
+                        <option value="naturaleza">Naturaleza</option>
+                        <option value="playa">Sol y Playa</option>
+                        <option value="cultural">Cultural</option>
+                        <option value="gastronomico">Gastronómico</option>
+                        <option value="religioso">Religioso</option>
+                    </select>
+                    <button type="submit" class="btn btn-accent">Buscar</button>
+                </form>
+            </div>
+
+            <div class="hero-scroll" aria-hidden="true">
+                <span>Explorar</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- ==================== DESTINOS DESTACADOS ==================== -->
+        <section class="destinos-section" aria-labelledby="destinos-titulo">
+            <div class="destinos-header container">
+                <div>
+                    <p class="section-label">Nuestras recomendaciones</p>
+                    <h2 id="destinos-titulo" class="section-title">Destinos <br />destacados</h2>
+                </div>
+                <div>
+                    <p class="section-subtitle">Los lugares más elegidos por nuestros viajeros, cuidadosamente seleccionados.</p>
+                    <a href="destinos.html" class="ver-todos-link" aria-label="Ver todos los destinos">Ver todos los destinos →</a>
+                </div>
+            </div>
+
+            <div class="destinos-grid container" role="list">
+                <article class="card-destino reveal" role="listitem">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=800&q=80" alt="Cataratas del Iguazú, Misiones, Argentina" loading="lazy" />
+                        <span class="card-badge">Top Pick</span>
+                        <div class="card-overlay">
+                            <a href="destinos.html#iguazu" class="btn btn-outline btn-small">Ver paquetes</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-category">🌿 Naturaleza</span>
+                            <span class="card-rating" aria-label="Calificación: 4.9">⭐ 4.9</span>
+                        </div>
+                        <h3>Cataratas del Iguazú</h3>
+                        <p>Una de las maravillas naturales del mundo, un espectáculo de agua y selva que te va a dejar sin palabras.</p>
+                        <div class="card-footer">
+                            <div class="card-price">$85.000 <span>/ persona</span></div>
+                            <a href="destinos.html#iguazu" class="btn btn-primary btn-small">Reservar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-destino reveal" role="listitem">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1519448698185-3add5db8a573?w=600&q=80" alt="San Carlos de Bariloche, Patagonia, Argentina" loading="lazy" />
+                        <span class="card-badge badge-alt">Popular</span>
+                        <div class="card-overlay">
+                            <a href="destinos.html#bariloche" class="btn btn-outline btn-small">Ver paquetes</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-category">🏔️ Montaña</span>
+                            <span class="card-rating" aria-label="Calificación: 4.8">⭐ 4.8</span>
+                        </div>
+                        <h3>Bariloche Patagónico</h3>
+                        <p>Lagos cristalinos, bosques de coihue y la majestuosidad de los Andes. El destino soñado en cualquier época del año.</p>
+                        <div class="card-footer">
+                            <div class="card-price">$95.000 <span>/ persona</span></div>
+                            <a href="destinos.html#bariloche" class="btn btn-primary btn-small">Reservar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-destino reveal" role="listitem">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1576398289164-c48dc021b4e1?w=600&q=80" alt="Buenos Aires, Argentina - Caminito La Boca" loading="lazy" />
+                        <div class="card-overlay">
+                            <a href="destinos.html#bsas" class="btn btn-outline btn-small">Ver paquetes</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-category">🏛️ Cultural</span>
+                            <span class="card-rating" aria-label="Calificación: 4.7">⭐ 4.7</span>
+                        </div>
+                        <h3>Buenos Aires Porteña</h3>
+                        <p>El tango, la arquitectura europea, la gastronomía y la vida nocturna hacen de la capital argentina una ciudad única.</p>
+                        <div class="card-footer">
+                            <div class="card-price">$45.000 <span>/ persona</span></div>
+                            <a href="destinos.html#bsas" class="btn btn-primary btn-small">Reservar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-destino reveal" role="listitem">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Quebrada de Humahuaca, Jujuy, Argentina" loading="lazy" />
+                        <span class="card-badge badge-red">Nuevo</span>
+                        <div class="card-overlay">
+                            <a href="destinos.html#noa" class="btn btn-outline btn-small">Ver paquetes</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-category">⛪ Cultural / Religioso</span>
+                            <span class="card-rating" aria-label="Calificación: 4.9">⭐ 4.9</span>
+                        </div>
+                        <h3>Quebrada de Humahuaca</h3>
+                        <p>Patrimonio UNESCO, colores únicos en los cerros y una cultura milenaria que te conecta con lo esencial.</p>
+                        <div class="card-footer">
+                            <div class="card-price">$38.000 <span>/ persona</span></div>
+                            <a href="destinos.html#noa" class="btn btn-primary btn-small">Reservar</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==================== CONTADORES ==================== -->
+        <section class="stats-section" aria-label="Estadísticas de la agencia">
+            <div class="stats-grid container">
+                <div class="stat-item reveal">
+                    <div class="stat-number"><span class="counter" data-target="15400">0</span><span class="suffix">+</span></div>
+                    <p class="stat-label">Viajeros felices</p>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number"><span class="counter" data-target="230">0</span><span class="suffix">+</span></div>
+                    <p class="stat-label">Destinos disponibles</p>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number"><span class="counter" data-target="48">0</span></div>
+                    <p class="stat-label">Agencias asociadas</p>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number"><span class="counter" data-target="20">0</span><span class="suffix">años</span></div>
+                    <p class="stat-label">De experiencia</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CÓMO FUNCIONA ==================== -->
+        <section class="como-section" aria-labelledby="como-titulo">
+            <div class="section-header container">
+                <p class="section-label">Simple y rápido</p>
+                <h2 id="como-titulo" class="section-title">¿Cómo funciona?</h2>
+                <p class="section-subtitle">En tres pasos podés planificar el viaje de tus sueños.</p>
+            </div>
+            <div class="como-grid container">
+                <div class="como-step reveal">
+                    <div class="como-num" aria-hidden="true">1</div>
+                    <h3>Elegí tu destino</h3>
+                    <p>Explorá nuestro catálogo de más de 230 destinos y encontrá el lugar perfecto para vos.</p>
+                </div>
+                <div class="como-step reveal">
+                    <div class="como-num" aria-hidden="true">2</div>
+                    <h3>Elegí tu agencia</h3>
+                    <p>Compará precios y opiniones de agencias certificadas antes de tomar la decisión.</p>
+                </div>
+                <div class="como-step reveal">
+                    <div class="como-num" aria-hidden="true">3</div>
+                    <h3>Reservá y viajá</h3>
+                    <p>Completá el formulario de contacto, coordiná los detalles y preparate para la aventura.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== INSPIRACIÓN ==================== -->
+        <section class="inspiracion-section" aria-labelledby="inspiracion-titulo">
+            <div class="container">
+                <p class="section-label">Para que no pares de soñar</p>
+                <h2 id="inspiracion-titulo" class="section-title">Inspiración para tu próximo viaje</h2>
+            </div>
+            <div class="inspiracion-scroll" role="list">
+                <div class="inspiracion-item reveal" role="listitem">
+                    <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=400&q=80" alt="Santorini, Grecia" class="inspiracion-img" loading="lazy" />
+                    <div class="insp-overlay"><span>Europa</span><strong>Santorini</strong></div>
+                </div>
+                <div class="inspiracion-item reveal" role="listitem">
+                    <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=400&q=80" alt="Machu Picchu, Perú" class="inspiracion-img" loading="lazy" />
+                    <div class="insp-overlay"><span>Sudamérica</span><strong>Machu Picchu</strong></div>
+                </div>
+                <div class="inspiracion-item reveal" role="listitem">
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&q=80" alt="Maldivas" class="inspiracion-img" loading="lazy" />
+                    <div class="insp-overlay"><span>Asia</span><strong>Maldivas</strong></div>
+                </div>
+                <div class="inspiracion-item reveal" role="listitem">
+                    <img src="https://images.unsplash.com/photo-1499678329028-101435549a4e?w=400&q=80" alt="Bali, Indonesia" class="inspiracion-img" loading="lazy" />
+                    <div class="insp-overlay"><span>Asia</span><strong>Bali</strong></div>
+                </div>
+                <div class="inspiracion-item reveal" role="listitem">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&q=80" alt="París, Francia" class="inspiracion-img" loading="lazy" />
+                    <div class="insp-overlay"><span>Europa</span><strong>París</strong></div>
+                </div>
+                <div class="inspiracion-item reveal" role="listitem">
+                    <img src="https://images.unsplash.com/photo-1555400082-586b47b09fc3?w=400&q=80" alt="Glaciar Perito Moreno" class="inspiracion-img" loading="lazy" />
+                    <div class="insp-overlay"><span>Argentina</span><strong>Perito Moreno</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TESTIMONIOS ==================== -->
+        <section class="testimonios-section" aria-labelledby="testimonios-titulo">
+            <div class="section-header container">
+                <p class="section-label">Lo que dicen nuestros viajeros</p>
+                <h2 id="testimonios-titulo" class="section-title">Testimonios</h2>
+            </div>
+            <div class="carousel-wrapper container">
+                <input type="radio" name="testimonial" id="testimonial-1" checked hidden>
+                <input type="radio" name="testimonial" id="testimonial-2" hidden>
+                <input type="radio" name="testimonial" id="testimonial-3" hidden>
+                <input type="radio" name="testimonial" id="testimonial-4" hidden>
+
+                <div class="carousel-slides" aria-live="polite">
+                    <article class="carousel-slide slide-1 testimonio-card reveal">
+                        <div class="testimonio-stars" aria-label="5 estrellas">★★★★★</div>
+                        <blockquote class="testimonio-text">"El viaje a las Cataratas fue absolutamente mágico. Se encargaron de todo, desde el hotel hasta las excursiones. No podría haber sido más perfecto."</blockquote>
+                        <div class="testimonio-author">
+                            <div class="author-avatar" aria-hidden="true">MG</div>
+                            <div class="author-info">
+                                <strong>María González</strong>
+                                <span>Viajó a Cataratas del Iguazú</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="carousel-slide slide-2 testimonio-card reveal">
+                        <div class="testimonio-stars" aria-label="5 estrellas">★★★★★</div>
+                        <blockquote class="testimonio-text">"Viajé con mi familia a Bariloche y fue la mejor decisión. La agencia que nos recomendaron fue excelente, muy atentos y profesionales."</blockquote>
+                        <div class="testimonio-author">
+                            <div class="author-avatar" aria-hidden="true">CR</div>
+                            <div class="author-info">
+                                <strong>Carlos Rodríguez</strong>
+                                <span>Viajó a Bariloche</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="carousel-slide slide-3 testimonio-card reveal">
+                        <div class="testimonio-stars" aria-label="5 estrellas">★★★★★</div>
+                        <blockquote class="testimonio-text">"La Quebrada de Humahuaca me dejó sin palabras. Un destino increíble, cerca de casa, que nunca había descubierto. Gracias por la recomendación."</blockquote>
+                        <div class="testimonio-author">
+                            <div class="author-avatar" aria-hidden="true">AM</div>
+                            <div class="author-info">
+                                <strong>Ana Martínez</strong>
+                                <span>Viajó a Jujuy</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="carousel-slide slide-4 testimonio-card reveal">
+                        <div class="testimonio-stars" aria-label="4 estrellas">★★★★☆</div>
+                        <blockquote class="testimonio-text">"Excelente servicio y atención personalizada. Nos armaron un circuito por el norte argentino a medida de nuestro presupuesto. Lo recomiendo 100%."</blockquote>
+                        <div class="testimonio-author">
+                            <div class="author-avatar" aria-hidden="true">LP</div>
+                            <div class="author-info">
+                                <strong>Lucas Pereyra</strong>
+                                <span>Circuito Norte Argentino</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="carousel-tabs" role="tablist">
+                    <label class="carousel-tab" for="testimonial-1" role="tab" aria-label="Testimonio 1" tabindex="0"></label>
+                    <label class="carousel-tab" for="testimonial-2" role="tab" aria-label="Testimonio 2" tabindex="0"></label>
+                    <label class="carousel-tab" for="testimonial-3" role="tab" aria-label="Testimonio 3" tabindex="0"></label>
+                    <label class="carousel-tab" for="testimonial-4" role="tab" aria-label="Testimonio 4" tabindex="0"></label>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== BLOG PREVIEW ==================== -->
+        <section class="blog-preview" aria-labelledby="blog-titulo">
+            <div class="container section-header section-header--space-between">
+                <div>
+                    <p class="section-label">Noticias y consejos</p>
+                    <h2 id="blog-titulo" class="section-title">Nuestro Blog</h2>
+                </div>
+                <a href="blog.html" class="ver-todos-link">Ver todos los artículos →</a>
+            </div>
+            <div class="blog-grid container">
+                <article class="blog-card blog-card-featured reveal">
+                    <div class="blog-card-img">
+                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="Bali" loading="lazy" />
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Guía de viaje</span>
+                        <h3>Bali en 10 días: la guía definitiva para tu primer viaje</h3>
+                        <p>Templos, arrozales, surf y gastronomía. Todo lo que necesitás saber para aprovechar al máximo tu visita a la isla de los dioses.</p>
+                        <div class="blog-meta">
+                            <span>📅 15 Nov 2025</span>
+                            <span>✍️ Laura Salas</span>
+                            <span>⏱️ 8 min</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog-card reveal">
+                    <div class="blog-card-img">
+                        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80" alt="Safari en África" loading="lazy" />
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Naturaleza</span>
+                        <h3>5 motivos para hacer un safari en tu vida</h3>
+                        <p>La experiencia más transformadora que podés vivir como viajero.</p>
+                        <div class="blog-meta">
+                            <span>📅 8 Nov 2025</span>
+                            <span>⏱️ 5 min</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="blog-card reveal">
+                    <div class="blog-card-img">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Gastronomía italiana" loading="lazy" />
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Gastronómico</span>
+                        <h3>Ruta gastronómica por el norte de Italia</h3>
+                        <p>Pasta, trufa y vinos que no vas a encontrar en ningún otro lugar del mundo.</p>
+                        <div class="blog-meta">
+                            <span>📅 2 Nov 2025</span>
+                            <span>⏱️ 6 min</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==================== CTA ==================== -->
+        <section class="cta-banner" aria-label="Llamada a la acción">
+            <div class="container cta-content">
+                <p class="section-label">¿Listo para partir?</p>
+                <h2 class="section-title">Tu próxima aventura<br />te está esperando</h2>
+                <p>Hablá con uno de nuestros expertos y armemos juntos el viaje perfecto para vos.</p>
+                <a href="contacto.html" class="btn btn-accent">Consultar ahora →</a>
+            </div>
+        </section>
+    </main>
+
+    <div data-include-html="partials/footer.html"></div>
+
+    <script src="scripts/script.js"></script>
+    <script>
+        // Contadores animados
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 80;
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // Carrusel de testimonios
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonio-card');
+        const tabs = document.querySelectorAll('.carousel-tab');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+            });
+            tabs.forEach((tab, i) => {
+                tab.setAttribute('aria-selected', i === index ? 'true' : 'false');
+            });
+        }
+
+        if (slides.length > 0 && prevBtn && nextBtn) {
+            showSlide(0);
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            });
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            });
+            tabs.forEach((tab, i) => {
+                tab.addEventListener('click', () => {
+                    currentSlide = i;
+                    showSlide(currentSlide);
+                });
+            });
+        }
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // Iniciar contadores cuando se vean
+        const statsSection = document.querySelector('.stats-section');
+        let countersStarted = false;
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersStarted) {
+                    countersStarted = true;
+                    animateCounters();
+                }
+            });
+        }, { threshold: 0.5 });
+        if (statsSection) statsObserver.observe(statsSection);
+    </script>
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conocé nuestras agencias de turismo asociadas. Perfiles detallados, calificaciones reales y contacto directo." />
+  <title>Agencias - Turismo Explorer</title>
+  <link rel="stylesheet" href="estilos/styles.css" />
+</head>
+<body>
+  <div data-include-html="partials/header.html"></div>
+
+  <main class="agencias-page" id="main-content">
+    <!-- Hero Section mejorado -->
+    <section class="agencias-hero snap-section" aria-label="Encabezado de Agencias">
+      <div class="hero-background"></div>
+      <div class="hero-content">
+        <span class="hero-badge">🌟 Agencias verificadas</span>
+        <h1>Agencias de<br /><em>Turismo</em></h1>
+        <p>Conectamos viajeros con las mejores agencias certificadas de Argentina y el mundo.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-number">+50</span>
+            <span class="stat-label">Agencias asociadas</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-number">+15k</span>
+            <span class="stat-label">Viajeros felices</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-number">4.9★</span>
+            <span class="stat-label">Calificación media</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span>Explorar</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <div class="breadcrumb-container">
+        <ol>
+          <li><a href="index.html">Inicio</a></li>
+          <li aria-current="page">Agencias</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Toolbar de filtros y búsqueda -->
+    <div class="toolbar" role="toolbar" aria-label="Filtrar agencias">
+      <div class="toolbar-inner">
+        <span class="toolbar-label">🎯 Filtrar por:</span>
+        <div class="filtros-grupo" role="group" aria-label="Categorías de agencias">
+          <button class="filtro-btn active" data-filter="todo">Todas</button>
+          <button class="filtro-btn" data-filter="internacional">🌍 Internacional</button>
+          <button class="filtro-btn" data-filter="nacional">🇦🇷 Nacional</button>
+          <button class="filtro-btn" data-filter="aventura">⛰️ Aventura</button>
+          <button class="filtro-btn" data-filter="lujo">👑 Lujo</button>
+          <button class="filtro-btn" data-filter="familiar">👨‍👩‍👧‍👦 Familiar</button>
+        </div>
+        <div class="toolbar-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input id="buscar-agencia" type="search" placeholder="Buscar agencia..." aria-label="Buscar agencia" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid de tarjetas con efecto FLIP -->
+    <section class="agencias-main" aria-labelledby="agencias-lista-titulo">
+      <div class="agencias-container">
+        <div class="agencias-header">
+          <h2 id="agencias-lista-titulo">🌟 Nuestras agencias asociadas</h2>
+          <p class="agencias-results">Mostrando <strong id="count-results">6</strong> agencias disponibles</p>
+        </div>
+
+        <div class="agencias-grid" id="agencias-lista">
+          <!-- Tarjeta 1 - Mundo Infinito -->
+          <article class="flip-card" data-categoria="internacional" data-nombre="Mundo Infinito">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <div class="popular-badge">🔥 Más popular</div>
+                <div class="agencia-logo logo-mi"></div>
+                <h3>Mundo Infinito</h3>
+                <p class="agencia-tipo">🌍 Turismo Internacional</p>
+                <div class="rating-stars">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <p class="agencia-location">📍 Buenos Aires, Argentina</p>
+                <div class="flip-hint">🖱️ Pasa el cursor para ver más</div>
+              </div>
+              <div class="flip-back">
+                <h3>Mundo Infinito</h3>
+                <p class="tagline">Tu ventana al mundo desde Argentina</p>
+                <div class="agencia-stats">
+                  <div><strong>1.200+</strong><span>Viajeros</span></div>
+                  <div><strong>15 años</strong><span>Experiencia</span></div>
+                  <div><strong>80+</strong><span>Destinos</span></div>
+                </div>
+                <div class="agencia-tags">
+                  <span>🇪🇸 Europa</span>
+                  <span>🇯🇵 Asia</span>
+                  <span>🏝️ Caribe</span>
+                </div>
+                <button class="btn-contactar" data-agencia="Mundo Infinito">📞 Contactar →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2 - Raíces Argentinas -->
+          <article class="flip-card" data-categoria="nacional" data-nombre="Raíces Argentinas">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <div class="agencia-logo logo-ra"></div>
+                <h3>Raíces Argentinas</h3>
+                <p class="agencia-tipo">🇦🇷 Turismo Nacional</p>
+                <div class="rating-stars">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+                </div>
+                <p class="agencia-location">📍 Córdoba, Argentina</p>
+                <div class="flip-hint">🖱️ Pasa el cursor para ver más</div>
+              </div>
+              <div class="flip-back">
+                <h3>Raíces Argentinas</h3>
+                <p class="tagline">Descubrí Argentina como nunca antes</p>
+                <div class="agencia-stats">
+                  <div><strong>850+</strong><span>Viajeros</span></div>
+                  <div><strong>10 años</strong><span>Experiencia</span></div>
+                  <div><strong>40+</strong><span>Circuitos</span></div>
+                </div>
+                <div class="agencia-tags">
+                  <span>❄️ Patagonia</span>
+                  <span>🏔️ NOA</span>
+                  <span>🌊 Litoral</span>
+                </div>
+                <button class="btn-contactar" data-agencia="Raíces Argentinas">📞 Contactar →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3 - Vértigo Extremo -->
+          <article class="flip-card" data-categoria="aventura" data-nombre="Vértigo Extremo">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <div class="popular-badge trend-badge">⚡ Trend</div>
+                <div class="agencia-logo logo-ve"></div>
+                <h3>Vértigo Extremo</h3>
+                <p class="agencia-tipo">⛰️ Turismo Aventura</p>
+                <div class="rating-stars">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <p class="agencia-location">📍 Mendoza, Argentina</p>
+                <div class="flip-hint">🖱️ Pasa el cursor para ver más</div>
+              </div>
+              <div class="flip-back">
+                <h3>Vértigo Extremo</h3>
+                <p class="tagline">Para los que viajan sin límites</p>
+                <div class="agencia-stats">
+                  <div><strong>600+</strong><span>Aventureros</span></div>
+                  <div><strong>8 años</strong><span>Experiencia</span></div>
+                  <div><strong>30+</strong><span>Actividades</span></div>
+                </div>
+                <div class="agencia-tags">
+                  <span>🥾 Trekking</span>
+                  <span>🛶 Rafting</span>
+                  <span>🧗 Escalada</span>
+                </div>
+                <button class="btn-contactar" data-agencia="Vértigo Extremo">📞 Contactar →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 4 - Grand Voyage (Lujo) -->
+          <article class="flip-card" data-categoria="lujo" data-nombre="Grand Voyage">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <div class="popular-badge premium-badge">👑 Premium</div>
+                <div class="agencia-logo logo-gv"></div>
+                <h3>Grand Voyage</h3>
+                <p class="agencia-tipo">👑 Turismo de Lujo</p>
+                <div class="rating-stars">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <p class="agencia-location">📍 Buenos Aires, Argentina</p>
+                <div class="flip-hint">🖱️ Pasa el cursor para ver más</div>
+              </div>
+              <div class="flip-back">
+                <h3>Grand Voyage</h3>
+                <p class="tagline">Experiencias exclusivas sin comparación</p>
+                <div class="agencia-stats">
+                  <div><strong>320+</strong><span>Clientes VIP</span></div>
+                  <div><strong>20 años</strong><span>Experiencia</span></div>
+                  <div><strong>120+</strong><span>Destinos</span></div>
+                </div>
+                <div class="agencia-tags">
+                  <span>🛳️ Cruceros</span>
+                  <span>🦁 Safari</span>
+                  <span>🏝️ Maldivas</span>
+                </div>
+                <button class="btn-contactar" data-agencia="Grand Voyage">📞 Contactar →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 5 - FamiliaViaja -->
+          <article class="flip-card" data-categoria="familiar" data-nombre="FamiliaViaja">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <div class="agencia-logo logo-fv"></div>
+                <h3>FamiliaViaja</h3>
+                <p class="agencia-tipo">👨‍👩‍👧‍👦 Turismo Familiar</p>
+                <div class="rating-stars">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">☆</span>
+                </div>
+                <p class="agencia-location">📍 Rosario, Argentina</p>
+                <div class="flip-hint">🖱️ Pasa el cursor para ver más</div>
+              </div>
+              <div class="flip-back">
+                <h3>FamiliaViaja</h3>
+                <p class="tagline">Viajes pensados para toda la familia</p>
+                <div class="agencia-stats">
+                  <div><strong>2.100+</strong><span>Familias</span></div>
+                  <div><strong>12 años</strong><span>Experiencia</span></div>
+                  <div><strong>50+</strong><span>Circuitos</span></div>
+                </div>
+                <div class="agencia-tags">
+                  <span>🏰 Disney</span>
+                  <span>🎢 Parques</span>
+                  <span>🏖️ Playa</span>
+                </div>
+                <button class="btn-contactar" data-agencia="FamiliaViaja">📞 Contactar →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 6 - Norte Profundo -->
+          <article class="flip-card" data-categoria="nacional" data-nombre="Norte Profundo">
+            <div class="flip-card-inner">
+              <div class="flip-front">
+                <div class="agencia-logo logo-np"></div>
+                <h3>Norte Profundo</h3>
+                <p class="agencia-tipo">🏔️ Turismo Regional NOA</p>
+                <div class="rating-stars">
+                  <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+                <p class="agencia-location">📍 Jujuy, Argentina</p>
+                <div class="flip-hint">🖱️ Pasa el cursor para ver más</div>
+              </div>
+              <div class="flip-back">
+                <h3>Norte Profundo</h3>
+                <p class="tagline">El corazón del noroeste argentino</p>
+                <div class="agencia-stats">
+                  <div><strong>500+</strong><span>Viajeros</span></div>
+                  <div><strong>6 años</strong><span>Experiencia</span></div>
+                  <div><strong>25+</strong><span>Circuitos</span></div>
+                </div>
+                <div class="agencia-tags">
+                  <span>🏞️ Humahuaca</span>
+                  <span>🏜️ Puna</span>
+                  <span>🧂 Salinas</span>
+                </div>
+                <button class="btn-contactar" data-agencia="Norte Profundo">📞 Contactar →</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sistema de rating con estrellas animadas mejorado -->
+    <section class="rating-system-section snap-section" aria-labelledby="rating-titulo">
+      <div class="rating-container">
+        <div class="rating-header">
+          <span class="section-label">⭐ Calificaciones</span>
+          <h2 id="rating-titulo">¿Ya viajaste con nosotros?</h2>
+          <p>Calificá tu experiencia con nuestras agencias. Tu opinión ayuda a otros viajeros.</p>
+        </div>
+        <div class="rating-cards">
+          <div class="rating-card" data-agencia-rating="Mundo Infinito">
+            <h4>🌍 Mundo Infinito</h4>
+            <div class="css-rating">
+              <input type="radio" name="rating1" id="r1-5" value="5">
+              <label for="r1-5" title="5 estrellas">★</label>
+              <input type="radio" name="rating1" id="r1-4" value="4">
+              <label for="r1-4" title="4 estrellas">★</label>
+              <input type="radio" name="rating1" id="r1-3" value="3">
+              <label for="r1-3" title="3 estrellas">★</label>
+              <input type="radio" name="rating1" id="r1-2" value="2">
+              <label for="r1-2" title="2 estrellas">★</label>
+              <input type="radio" name="rating1" id="r1-1" value="1">
+              <label for="r1-1" title="1 estrella">★</label>
+            </div>
+            <div class="rating-average">⭐ Promedio: 4.8 (234 opiniones)</div>
+            <button class="rating-submit" data-agencia="Mundo Infinito">Enviar calificación</button>
+          </div>
+          <div class="rating-card" data-agencia-rating="Raíces Argentinas">
+            <h4>🇦🇷 Raíces Argentinas</h4>
+            <div class="css-rating">
+              <input type="radio" name="rating2" id="r2-5" value="5">
+              <label for="r2-5">★</label>
+              <input type="radio" name="rating2" id="r2-4" value="4">
+              <label for="r2-4">★</label>
+              <input type="radio" name="rating2" id="r2-3" value="3">
+              <label for="r2-3">★</label>
+              <input type="radio" name="rating2" id="r2-2" value="2">
+              <label for="r2-2">★</label>
+              <input type="radio" name="rating2" id="r2-1" value="1">
+              <label for="r2-1">★</label>
+            </div>
+            <div class="rating-average">⭐ Promedio: 4.6 (189 opiniones)</div>
+            <button class="rating-submit" data-agencia="Raíces Argentinas">Enviar calificación</button>
+          </div>
+          <div class="rating-card" data-agencia-rating="Vértigo Extremo">
+            <h4>⛰️ Vértigo Extremo</h4>
+            <div class="css-rating">
+              <input type="radio" name="rating3" id="r3-5" value="5">
+              <label for="r3-5">★</label>
+              <input type="radio" name="rating3" id="r3-4" value="4">
+              <label for="r3-4">★</label>
+              <input type="radio" name="rating3" id="r3-3" value="3">
+              <label for="r3-3">★</label>
+              <input type="radio" name="rating3" id="r3-2" value="2">
+              <label for="r3-2">★</label>
+              <input type="radio" name="rating3" id="r3-1" value="1">
+              <label for="r3-1">★</label>
+            </div>
+            <div class="rating-average">⭐ Promedio: 4.9 (567 opiniones)</div>
+            <button class="rating-submit" data-agencia="Vértigo Extremo">Enviar calificación</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal de contacto rápido -->
+    <div id="quickContactModal" class="quick-contact-modal">
+      <div class="quick-modal-content">
+        <div class="quick-modal-header">
+          <h3>📞 Contactar agencia</h3>
+          <button class="quick-modal-close" onclick="closeQuickModal()">×</button>
+        </div>
+        <div id="quickModalBody"></div>
+      </div>
+    </div>
+
+    <!-- CTA Final -->
+    <section class="cta-agencias">
+      <div class="cta-content">
+        <span class="cta-badge">🚀 ¿Sos una agencia?</span>
+        <h2>Sumate a nuestra red de agencias</h2>
+        <p>Llegarás a miles de viajeros que buscan sus próximas aventuras.</p>
+        <div class="btn-group">
+          <a href="contacto.html" class="btn-primary">Registrar mi agencia →</a>
+          <a href="destinos.html" class="btn-outline">Explorar destinos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include-html="partials/footer.html"></div>
+
+  <script src="scripts/script.js"></script>
+  <script>
+    (function() {
+      // ==================== FILTRO DE AGENCIAS ====================
+      const filterBtns = document.querySelectorAll('.filtro-btn');
+      const cards = document.querySelectorAll('.flip-card');
+      const searchInput = document.getElementById('buscar-agencia');
+      const countResults = document.getElementById('count-results');
+
+      function updateFilter() {
+        const activeFilter = document.querySelector('.filtro-btn.active')?.dataset.filter || 'todo';
+        const searchTerm = searchInput?.value.toLowerCase() || '';
+        
+        let visibleCount = 0;
+        cards.forEach(card => {
+          const categoria = card.dataset.categoria;
+          const title = card.querySelector('.flip-front h3')?.textContent.toLowerCase() || '';
+          
+          let matchesFilter = activeFilter === 'todo' || categoria === activeFilter;
+          let matchesSearch = title.includes(searchTerm);
+          
+          if (matchesFilter && matchesSearch) {
+            card.style.display = 'block';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        if (countResults) countResults.textContent = visibleCount;
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          updateFilter();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', updateFilter);
+      }
+
+      // ==================== MODAL DE CONTACTO RÁPIDO ====================
+      const quickModal = document.getElementById('quickContactModal');
+      
+      window.openQuickModal = function(agenciaNombre) {
+        const modalBody = document.getElementById('quickModalBody');
+        modalBody.innerHTML = `
+          <form class="quick-form" id="quickContactForm">
+            <input type="text" placeholder="Tu nombre" id="quickNombre" required>
+            <input type="email" placeholder="Tu email" id="quickEmail" required>
+            <input type="tel" placeholder="Teléfono" id="quickTelefono">
+            <textarea placeholder="Mensaje para ${agenciaNombre}..." rows="3" id="quickMensaje"></textarea>
+            <button type="submit" class="quick-submit">Enviar consulta →</button>
+          </form>
+        `;
+        
+        quickModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        const form = document.getElementById('quickContactForm');
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const nombre = document.getElementById('quickNombre').value;
+          const email = document.getElementById('quickEmail').value;
+          
+          if (nombre && email) {
+            modalBody.innerHTML = `
+              <div style="text-align: center; padding: 2rem;">
+                <span style="font-size: 4rem;">✅</span>
+                <h3>¡Consulta enviada!</h3>
+                <p>Gracias ${nombre}, ${agenciaNombre} se pondrá en contacto contigo pronto.</p>
+                <button class="quick-submit" onclick="closeQuickModal()" style="margin-top: 1rem;">Cerrar</button>
+              </div>
+            `;
+            setTimeout(() => {
+              if (quickModal.classList.contains('active')) {
+                closeQuickModal();
+              }
+            }, 3000);
+          }
+        });
+      };
+      
+      window.closeQuickModal = function() {
+        quickModal.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+      
+      document.querySelectorAll('.btn-contactar').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const agencia = this.getAttribute('data-agencia');
+          openQuickModal(agencia);
+        });
+      });
+      
+      quickModal.addEventListener('click', function(e) {
+        if (e.target === quickModal) {
+          closeQuickModal();
+        }
+      });
+      
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && quickModal.classList.contains('active')) {
+          closeQuickModal();
+        }
+      });
+
+      // ==================== RATING ====================
+      const ratingButtons = document.querySelectorAll('.rating-submit');
+      
+      ratingButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const card = this.closest('.rating-card');
+          const radios = card.querySelectorAll('input[type="radio"]');
+          let selectedValue = null;
+          
+          radios.forEach(radio => {
+            if (radio.checked) selectedValue = radio.value;
+          });
+          
+          if (selectedValue) {
+            this.textContent = `¡Gracias! (${selectedValue}★)`;
+            this.style.background = '#10b981';
+            setTimeout(() => {
+              this.textContent = 'Enviar calificación';
+              this.style.background = '';
+            }, 2000);
+          } else {
+            this.textContent = '⭐ Selecciona una estrella';
+            this.style.background = '#f7b267';
+            setTimeout(() => {
+              this.textContent = 'Enviar calificación';
+              this.style.background = '';
+            }, 2000);
+          }
+        });
+      });
+
+      // ==================== SCROLL REVEAL ====================
+      const revealElements = document.querySelectorAll('.flip-card, .rating-card');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      revealElements.forEach(el => observer.observe(el));
+
+      updateFilter();
+    })();
+  </script>
+</body>
+</html>

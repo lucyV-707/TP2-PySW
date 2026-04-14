@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios - Comparador de Destinos | Turismo Explorer</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+    <link rel="stylesheet" href="estilos/precios.css">
+</head>
+<body>
+    <div data-include-html="partials/header.html"></div>
+
+    <main>
+        <!-- Encabezado de página mejorado -->
+        <section class="page-header">
+            <div class="container">
+                <span class="section-label">💰 Comparador de Precios</span>
+                <h1>Encontrá el plan <span class="highlight">perfecto</span><br>para tu presupuesto</h1>
+                <p>Compará precios, servicios y elegí la mejor opción para tu próxima aventura</p>
+            </div>
+        </section>
+
+        <!-- Filtros rápidos mejorados -->
+        <section class="pricing-filters">
+            <div class="pricing-filters-container">
+                <button class="filter-price-btn active" data-filter="all">
+                    <span>🌍</span> Todos los destinos
+                </button>
+                <button class="filter-price-btn" data-filter="economico">
+                    <span>💰</span> Económico ($ - $$)
+                </button>
+                <button class="filter-price-btn" data-filter="medio">
+                    <span>💎</span> Medio ($$ - $$$)
+                </button>
+                <button class="filter-price-btn" data-filter="lujo">
+                    <span>👑</span> Lujo ($$$ - $$$$)
+                </button>
+            </div>
+        </section>
+
+        <!-- Tabla de precios mejorada -->
+        <section class="pricing-table-section">
+            <div class="pricing-container">
+                <div class="table-responsive">
+                    <table class="price-comparison-table" id="priceTable">
+                        <thead>
+                            <tr>
+                                <th>Destino</th>
+                                <th>Categoría</th>
+                                <th>Duración</th>
+                                <th>Precio Base</th>
+                                <th>Todo Incluido</th>
+                                <th>Premium</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Destino 1 - Cataratas (Económico) -->
+                            <tr data-price-level="economico" data-destino="Cataratas del Iguazú">
+                                <td class="destino-cell">
+                                    <div class="destino-info">
+                                        <img src="https://images.unsplash.com/photo-1544198365-f5d60b6d8190?w=80&h=80&fit=crop" alt="Cataratas" loading="lazy">
+                                        <div>
+                                            <strong>Cataratas del Iguazú</strong>
+                                            <span class="destino-pais">Argentina</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-badge naturaleza">🌿 Naturaleza</span></td>
+                                <td>4 días / 3 noches</td>
+                                <td class="price-cell" data-plan="base">$299 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="todo">$499 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="premium">$799 <span class="price-period">/pax</span></td>
+                                <td><button class="btn-reservar" data-destino="Cataratas del Iguazú">Reservar →</button></td>
+                            </tr>
+
+                            <!-- Destino 2 - Bariloche (Económico) -->
+                            <tr data-price-level="economico" data-destino="Bariloche">
+                                <td class="destino-cell">
+                                    <div class="destino-info">
+                                        <img src="https://images.unsplash.com/photo-1519448698185-3add5db8a573?w=80&h=80&fit=crop" alt="Bariloche" loading="lazy">
+                                        <div>
+                                            <strong>Bariloche</strong>
+                                            <span class="destino-pais">Argentina</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-badge montaña">🏔️ Montaña</span></td>
+                                <td>5 días / 4 noches</td>
+                                <td class="price-cell" data-plan="base">$349 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="todo">$549 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="premium">$899 <span class="price-period">/pax</span></td>
+                                <td><button class="btn-reservar" data-destino="Bariloche">Reservar →</button></td>
+                            </tr>
+
+                            <!-- Destino 3 - Buenos Aires (Económico) -->
+                            <tr data-price-level="economico" data-destino="Buenos Aires">
+                                <td class="destino-cell">
+                                    <div class="destino-info">
+                                        <img src="https://images.unsplash.com/photo-1576398289164-c48dc021b4e1?w=80&h=80&fit=crop" alt="Buenos Aires" loading="lazy">
+                                        <div>
+                                            <strong>Buenos Aires</strong>
+                                            <span class="destino-pais">Argentina</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-badge cultural">🏛️ Cultural</span></td>
+                                <td>3 días / 2 noches</td>
+                                <td class="price-cell" data-plan="base">$199 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="todo">$399 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="premium">$649 <span class="price-period">/pax</span></td>
+                                <td><button class="btn-reservar" data-destino="Buenos Aires">Reservar →</button></td>
+                            </tr>
+
+                            <!-- Destino 4 - Quebrada (Económico) -->
+                            <tr data-price-level="economico" data-destino="Quebrada de Humahuaca">
+                                <td class="destino-cell">
+                                    <div class="destino-info">
+                                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop" alt="Quebrada" loading="lazy">
+                                        <div>
+                                            <strong>Quebrada de Humahuaca</strong>
+                                            <span class="destino-pais">Argentina</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-badge cultural">🏛️ Cultural</span></td>
+                                <td>4 días / 3 noches</td>
+                                <td class="price-cell" data-plan="base">$279 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="todo">$459 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="premium">$729 <span class="price-period">/pax</span></td>
+                                <td><button class="btn-reservar" data-destino="Quebrada de Humahuaca">Reservar →</button></td>
+                            </tr>
+
+                            <!-- Destino 5 - Machu Picchu (Medio) -->
+                            <tr data-price-level="medio" data-destino="Machu Picchu">
+                                <td class="destino-cell">
+                                    <div class="destino-info">
+                                        <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?w=80&h=80&fit=crop" alt="Machu Picchu" loading="lazy">
+                                        <div>
+                                            <strong>Machu Picchu</strong>
+                                            <span class="destino-pais">Perú</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-badge cultural">🏛️ Cultural</span></td>
+                                <td>5 días / 4 noches</td>
+                                <td class="price-cell" data-plan="base">$599 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="todo">$899 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="premium">$1,299 <span class="price-period">/pax</span></td>
+                                <td><button class="btn-reservar" data-destino="Machu Picchu">Reservar →</button></td>
+                             </tr>
+
+                            <!-- Destino 6 - Cancún (Medio) -->
+                            <tr data-price-level="medio" data-destino="Cancún">
+                                <td class="destino-cell">
+                                    <div class="destino-info">
+                                        <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=80&h=80&fit=crop" alt="Cancún" loading="lazy">
+                                        <div>
+                                            <strong>Cancún</strong>
+                                            <span class="destino-pais">México</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-badge playa">🏖️ Playa</span></td>
+                                <td>6 días / 5 noches</td>
+                                <td class="price-cell" data-plan="base">$649 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="todo">$949 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="premium">$1,399 <span class="price-period">/pax</span></td>
+                                <td><button class="btn-reservar" data-destino="Cancún">Reservar →</button></td>
+                             </tr>
+
+                            <!-- Destino 7 - Río (Medio) -->
+                            <tr data-price-level="medio" data-destino="Río de Janeiro">
+                                <td class="destino-cell">
+                                    <div class="destino-info">
+                                        <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=80&h=80&fit=crop" alt="Río" loading="lazy">
+                                        <div>
+                                            <strong>Río de Janeiro</strong>
+                                            <span class="destino-pais">Brasil</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-badge playa">🏖️ Playa</span></td>
+                                <td>5 días / 4 noches</td>
+                                <td class="price-cell" data-plan="base">$549 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="todo">$849 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="premium">$1,199 <span class="price-period">/pax</span></td>
+                                <td><button class="btn-reservar" data-destino="Río de Janeiro">Reservar →</button></td>
+                             </tr>
+
+                            <!-- Destino 8 - Maldivas (Lujo) -->
+                            <tr data-price-level="lujo" data-destino="Maldivas">
+                                <td class="destino-cell">
+                                    <div class="destino-info">
+                                        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=80&h=80&fit=crop" alt="Maldivas" loading="lazy">
+                                        <div>
+                                            <strong>Maldivas</strong>
+                                            <span class="destino-pais">Maldivas</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-badge lujo">✨ Lujo</span></td>
+                                <td>7 días / 6 noches</td>
+                                <td class="price-cell" data-plan="base">$1,299 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="todo">$1,899 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="premium">$2,799 <span class="price-period">/pax</span></td>
+                                <td><button class="btn-reservar" data-destino="Maldivas">Reservar →</button></td>
+                             </tr>
+
+                            <!-- Destino 9 - París (Lujo) -->
+                            <tr data-price-level="lujo" data-destino="París">
+                                <td class="destino-cell">
+                                    <div class="destino-info">
+                                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=80&h=80&fit=crop" alt="París" loading="lazy">
+                                        <div>
+                                            <strong>París</strong>
+                                            <span class="destino-pais">Francia</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-badge cultural">🏛️ Cultural</span></td>
+                                <td>6 días / 5 noches</td>
+                                <td class="price-cell" data-plan="base">$1,099 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="todo">$1,599 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="premium">$2,299 <span class="price-period">/pax</span></td>
+                                <td><button class="btn-reservar" data-destino="París">Reservar →</button></td>
+                             </tr>
+
+                            <!-- Destino 10 - Santorini (Lujo) -->
+                            <tr data-price-level="lujo" data-destino="Santorini">
+                                <td class="destino-cell">
+                                    <div class="destino-info">
+                                        <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=80&h=80&fit=crop" alt="Santorini" loading="lazy">
+                                        <div>
+                                            <strong>Santorini</strong>
+                                            <span class="destino-pais">Grecia</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="category-badge playa">🏖️ Playa</span></td>
+                                <td>5 días / 4 noches</td>
+                                <td class="price-cell" data-plan="base">$1,199 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="todo">$1,699 <span class="price-period">/pax</span></td>
+                                <td class="price-cell" data-plan="premium">$2,499 <span class="price-period">/pax</span></td>
+                                <td><button class="btn-reservar" data-destino="Santorini">Reservar →</button></td>
+                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de reserva -->
+        <div id="bookingModal" class="booking-modal">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h3>📋 Reservar mi viaje</h3>
+                    <button class="modal-close" onclick="closeModal()">×</button>
+                </div>
+                <div id="modalContent">
+                    <!-- Contenido dinámico -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Tooltips explicativos -->
+        <section class="tooltips-info">
+            <div class="tooltips-container">
+                <h3>📋 ¿Qué incluye cada plan?</h3>
+                <div class="tooltips-grid">
+                    <div class="tooltip-card">
+                        <div class="tooltip-card-header">
+                            <span class="tooltip-card-icon">💰</span>
+                            <h4>Precio Base</h4>
+                        </div>
+                        <p>Incluye:</p>
+                        <ul>
+                            <li>✓ Hospedaje en categoría estándar</li>
+                            <li>✓ Desayuno diario</li>
+                            <li>✓ Asistencia al viajero básica</li>
+                        </ul>
+                        <div class="tooltip-hint">
+                            <span class="info-icon">ⓘ</span>
+                            <span class="hint-text">Ideal para viajeros que buscan lo esencial</span>
+                        </div>
+                    </div>
+                    <div class="tooltip-card featured">
+                        <div class="tooltip-card-header">
+                            <span class="tooltip-card-icon">🍽️</span>
+                            <h4>Todo Incluido</h4>
+                        </div>
+                        <p>Incluye:</p>
+                        <ul>
+                            <li>✓ Hospedaje en categoría superior</li>
+                            <li>✓ Todas las comidas</li>
+                            <li>✓ Excursiones principales</li>
+                            <li>✓ Traslados aeropuerto-hotel</li>
+                        </ul>
+                        <div class="tooltip-hint">
+                            <span class="info-icon">⭐</span>
+                            <span class="hint-text">La opción más elegida</span>
+                        </div>
+                    </div>
+                    <div class="tooltip-card">
+                        <div class="tooltip-card-header">
+                            <span class="tooltip-card-icon">👑</span>
+                            <h4>Premium</h4>
+                        </div>
+                        <p>Incluye:</p>
+                        <ul>
+                            <li>✓ Vuelos internacionales</li>
+                            <li>✓ Hoteles 5★</li>
+                            <li>✓ Excursiones VIP</li>
+                            <li>✓ Seguro de viaje premium</li>
+                        </ul>
+                        <div class="tooltip-hint">
+                            <span class="info-icon">✨</span>
+                            <span class="hint-text">Máxima comodidad y experiencias únicas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nota informativa -->
+        <div class="pricing-note">
+            <p>📢 Los precios mostrados son por persona en base a temporada baja. Consultá por promociones vigentes.</p>
+        </div>
+    </main>
+
+    <div data-include-html="partials/footer.html"></div>
+
+    <script src="scripts/script.js"></script>
+    <script>
+    (function() {
+        // ==================== FILTROS DE PRECIOS ====================
+        const filterBtns = document.querySelectorAll('.filter-price-btn');
+        const tableRows = document.querySelectorAll('#priceTable tbody tr');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                tableRows.forEach(row => {
+                    if (filterValue === 'all') {
+                        row.style.display = '';
+                    } else {
+                        const priceLevel = row.getAttribute('data-price-level');
+                        row.style.display = priceLevel === filterValue ? '' : 'none';
+                    }
+                });
+            });
+        });
+
+        // ==================== MODAL DE RESERVA CON SELECTOR DE PLANES ====================
+        const modal = document.getElementById('bookingModal');
+        let currentDestino = '';
+        
+        // Función para obtener los precios reales de cada destino
+        function getPricesForDestino(destino) {
+            const row = document.querySelector(`tr[data-destino="${destino}"]`);
+            if (row) {
+                const priceCells = row.querySelectorAll('.price-cell');
+                return {
+                    base: priceCells[0] ? priceCells[0].innerHTML.replace('<span class="price-period">/pax</span>', '').trim() : '$299',
+                    todo: priceCells[1] ? priceCells[1].innerHTML.replace('<span class="price-period">/pax</span>', '').trim() : '$499',
+                    premium: priceCells[2] ? priceCells[2].innerHTML.replace('<span class="price-period">/pax</span>', '').trim() : '$799'
+                };
+            }
+            return { base: '$299', todo: '$499', premium: '$799' };
+        }
+        
+        window.openModal = function(destino, planTipo, precio) {
+            currentDestino = destino;
+            const modalContent = document.getElementById('modalContent');
+            const prices = getPricesForDestino(destino);
+            
+            let planNombre = '';
+            let planPrecio = '';
+            
+            if (planTipo === 'base') {
+                planNombre = '💰 Precio Base';
+                planPrecio = prices.base;
+            } else if (planTipo === 'todo') {
+                planNombre = '🍽️ Todo Incluido';
+                planPrecio = prices.todo;
+            } else if (planTipo === 'premium') {
+                planNombre = '👑 Premium';
+                planPrecio = prices.premium;
+            }
+            
+            modalContent.innerHTML = `
+                <div class="plan-details">
+                    <p><strong>📍 Destino:</strong> ${destino}</p>
+                    <div class="plan-selector">
+                        <label><strong>🎯 Seleccioná tu plan:</strong></label>
+                        <div class="plan-options">
+                            <div class="plan-option" data-plan="base">
+                                <input type="radio" name="plan" id="plan-base" value="base" ${planTipo === 'base' ? 'checked' : ''}>
+                                <label for="plan-base">
+                                    <span class="plan-name">💰 Precio Base</span>
+                                    <span class="plan-price">${prices.base} /pax</span>
+                                </label>
+                            </div>
+                            <div class="plan-option" data-plan="todo">
+                                <input type="radio" name="plan" id="plan-todo" value="todo" ${planTipo === 'todo' ? 'checked' : ''}>
+                                <label for="plan-todo">
+                                    <span class="plan-name">🍽️ Todo Incluido</span>
+                                    <span class="plan-price">${prices.todo} /pax</span>
+                                </label>
+                            </div>
+                            <div class="plan-option" data-plan="premium">
+                                <input type="radio" name="plan" id="plan-premium" value="premium" ${planTipo === 'premium' ? 'checked' : ''}>
+                                <label for="plan-premium">
+                                    <span class="plan-name">👑 Premium</span>
+                                    <span class="plan-price">${prices.premium} /pax</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="selectedPlanInfo"><strong>📦 Plan seleccionado:</strong> ${planNombre} - ${planPrecio}</p>
+                </div>
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-group">
+                        <label>👤 Nombre completo *</label>
+                        <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label>📱 Teléfono *</label>
+                        <input type="tel" id="telefono" required placeholder="Ej: +54 11 1234-5678">
+                    </div>
+                    <div class="form-group">
+                        <label>✉️ Email *</label>
+                        <input type="email" id="email" required placeholder="ejemplo@correo.com">
+                    </div>
+                    <button type="submit" class="modal-submit">📨 Enviar solicitud →</button>
+                </form>
+            `;
+            
+            // Prevenir scroll del body
+            document.body.style.overflow = 'hidden';
+            modal.classList.add('active');
+            
+            // Event listeners para los radio buttons de planes
+            const planRadios = document.querySelectorAll('input[name="plan"]');
+            const selectedPlanInfo = document.getElementById('selectedPlanInfo');
+            
+            planRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const planValue = this.value;
+                    let planDisplayName = '';
+                    let planPrice = '';
+                    
+                    if (planValue === 'base') {
+                        planDisplayName = '💰 Precio Base';
+                        planPrice = prices.base;
+                    } else if (planValue === 'todo') {
+                        planDisplayName = '🍽️ Todo Incluido';
+                        planPrice = prices.todo;
+                    } else {
+                        planDisplayName = '👑 Premium';
+                        planPrice = prices.premium;
+                    }
+                    
+                    selectedPlanInfo.innerHTML = `<strong>📦 Plan seleccionado:</strong> ${planDisplayName} - ${planPrice}`;
+                });
+            });
+            
+            const form = document.getElementById('bookingForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const nombre = document.getElementById('nombre').value;
+                const telefono = document.getElementById('telefono').value;
+                const email = document.getElementById('email').value;
+                const selectedPlan = document.querySelector('input[name="plan"]:checked');
+                const planValue = selectedPlan ? selectedPlan.value : 'base';
+                let planDisplayName = '';
+                let planPrice = '';
+                
+                if (planValue === 'base') {
+                    planDisplayName = '💰 Precio Base';
+                    planPrice = prices.base;
+                } else if (planValue === 'todo') {
+                    planDisplayName = '🍽️ Todo Incluido';
+                    planPrice = prices.todo;
+                } else {
+                    planDisplayName = '👑 Premium';
+                    planPrice = prices.premium;
+                }
+                
+                if (nombre && telefono && email) {
+                    modalContent.innerHTML = `
+                        <div class="success-message">
+                            <span class="check-icon">✅</span>
+                            <h3>¡Solicitud enviada!</h3>
+                            <p>Gracias ${nombre}, nos pondremos en contacto contigo en las próximas 24 horas.</p>
+                            <div class="booking-summary">
+                                <p><strong>📍 Destino:</strong> ${currentDestino}</p>
+                                <p><strong>📦 Plan:</strong> ${planDisplayName}</p>
+                                <p><strong>💰 Precio:</strong> ${planPrice}</p>
+                                <p><strong>📧 Email:</strong> ${email}</p>
+                                <p><strong>📱 Teléfono:</strong> ${telefono}</p>
+                            </div>
+                            <button class="modal-submit" onclick="closeModal()">✓ Entendido, cerrar</button>
+                        </div>
+                    `;
+                }
+            });
+        };
+        
+        window.closeModal = function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+        
+        // Eventos para los botones de reserva
+        document.querySelectorAll('.btn-reservar').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const destino = this.getAttribute('data-destino');
+                const prices = getPricesForDestino(destino);
+                openModal(destino, 'base', prices.base);
+            });
+        });
+        
+        // Cerrar modal al hacer clic fuera
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Cerrar modal con tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+        
+        // Efecto de zoom en celdas de precio
+        const priceCells = document.querySelectorAll('.price-cell');
+        priceCells.forEach(cell => {
+            cell.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            cell.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Permitir hacer clic en las celdas de precio para seleccionar ese plan
+        priceCells.forEach((cell, index) => {
+            cell.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const row = this.closest('tr');
+                const destino = row.querySelector('.btn-reservar').getAttribute('data-destino');
+                let planTipo = '';
+                let precio = this.innerHTML.replace('<span class="price-period">/pax</span>', '').trim();
+                
+                if (index === 0) planTipo = 'base';
+                else if (index === 1) planTipo = 'todo';
+                else planTipo = 'premium';
+                
+                openModal(destino, planTipo, precio);
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

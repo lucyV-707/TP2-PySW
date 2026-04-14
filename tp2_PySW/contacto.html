@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Turismo Explorer</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+</head>
+<body>
+    <div data-include-html="partials/header.html"></div>
+
+    <main>
+        <!-- Encabezado de página -->
+        <section class="page-header">
+            <h1>Contacto</h1>
+            <p>¿Listo para tu próxima aventura? Contáctanos y hagamos realidad tu viaje</p>
+        </section>
+
+        <!-- Formulario de contacto avanzado -->
+        <section class="contact-form-section">
+            <div class="contact-container">
+                <!-- Información de contacto -->
+                <aside class="contact-info">
+                    <div class="contact-info-card">
+                        <h3>📞 Información de contacto</h3>
+                        <p>Estamos aquí para ayudarte. Contáctanos por cualquier medio y te responderemos a la brevedad.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span class="contact-icon">📍</span>
+                                <div>
+                                    <strong>Dirección</strong>
+                                    <p>Av. Corrientes 1234, CABA, Argentina</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p>info@turismoexplorer.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📱</span>
+                                <div>
+                                    <strong>Teléfono</strong>
+                                    <p>+54 11 1234-5678</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">⏰</span>
+                                <div>
+                                    <strong>Horario de atención</strong>
+                                    <p>Lun a Vie: 9am - 6pm</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <p>Seguinos en redes:</p>
+                            <div class="social-icons">
+                                <a href="#" aria-label="Facebook">📘</a>
+                                <a href="#" aria-label="Instagram">📷</a>
+                                <a href="#" aria-label="Twitter">🐦</a>
+                                <a href="#" aria-label="WhatsApp">💬</a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Formulario -->
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <h2>Envíanos un mensaje</h2>
+                        <p>Completá el formulario y te contactaremos a la brevedad</p>
+
+                        <!-- Campo Nombre -->
+                        <div class="form-group">
+                            <label for="nombre">
+                                Nombre completo <span class="required">*</span>
+                            </label>
+                            <input type="text" id="nombre" name="nombre" required 
+                                   pattern="^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{3,50}$"
+                                   placeholder="Ej: Juan Pérez">
+                            <span class="error-message">Por favor, ingresa un nombre válido (mínimo 3 caracteres)</span>
+                            <span class="valid-message">✓ Nombre válido</span>
+                        </div>
+
+                        <!-- Campo Email -->
+                        <div class="form-group">
+                            <label for="email">
+                                Correo electrónico <span class="required">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" required
+                                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                   placeholder="ejemplo@correo.com">
+                            <span class="error-message">Ingresa un email válido (ej: nombre@dominio.com)</span>
+                            <span class="valid-message">✓ Email válido</span>
+                        </div>
+
+                        <!-- Campo Teléfono -->
+                        <div class="form-group">
+                            <label for="telefono">
+                                Teléfono
+                            </label>
+                            <input type="tel" id="telefono" name="telefono"
+                                   pattern="^[0-9+\-\s]{8,20}$"
+                                   placeholder="+54 11 1234-5678">
+                            <span class="error-message">Ingresa un número de teléfono válido</span>
+                            <span class="valid-message">✓ Teléfono válido</span>
+                        </div>
+
+                        <!-- Selector de Destino -->
+                        <div class="form-group">
+                            <label for="destino">
+                                Destino de interés <span class="required">*</span>
+                            </label>
+                            <select id="destino" name="destino" required>
+                                <option value="">Selecciona un destino</option>
+                                <option value="cataratas">Cataratas del Iguazú</option>
+                                <option value="bariloche">Bariloche</option>
+                                <option value="bsas">Buenos Aires</option>
+                                <option value="quebrada">Quebrada de Humahuaca</option>
+                                <option value="machupicchu">Machu Picchu</option>
+                                <option value="cancun">Cancún</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <span class="error-message">Por favor, selecciona un destino</span>
+                            <span class="valid-message">✓ Destino seleccionado</span>
+                        </div>
+
+                        <!-- Número de viajeros -->
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="adultos">Adultos</label>
+                                <input type="number" id="adultos" name="adultos" min="1" max="20" value="2">
+                            </div>
+                            <div class="form-group half">
+                                <label for="ninos">Niños (0-12 años)</label>
+                                <input type="number" id="ninos" name="ninos" min="0" max="10" value="0">
+                            </div>
+                        </div>
+
+                        <!-- Fecha de viaje -->
+                        <div class="form-group">
+                            <label for="fecha">
+                                Fecha de viaje (aproximada)
+                            </label>
+                            <input type="date" id="fecha" name="fecha">
+                        </div>
+
+                        <!-- Mensaje -->
+                        <div class="form-group">
+                            <label for="mensaje">
+                                Mensaje o consulta <span class="required">*</span>
+                            </label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required
+                                      minlength="10" maxlength="500"
+                                      placeholder="Contanos qué tipo de experiencia estás buscando..."></textarea>
+                            <span class="error-message">El mensaje debe tener al menos 10 caracteres</span>
+                            <span class="valid-message">✓ Mensaje válido</span>
+                            <small class="char-counter">0/500 caracteres</small>
+                        </div>
+
+                        <!-- Checkbox de suscripción -->
+                        <div class="form-group checkbox">
+                            <label>
+                                <input type="checkbox" id="suscripcion" name="suscripcion">
+                                <span>Deseo recibir novedades y ofertas exclusivas</span>
+                            </label>
+                        </div>
+
+                        <!-- Checkbox de términos -->
+                        <div class="form-group checkbox">
+                            <label>
+                                <input type="checkbox" id="terminos" name="terminos" required>
+                                <span>Acepto los <a href="#" target="_blank">términos y condiciones</a> <span class="required">*</span></span>
+                            </label>
+                            <span class="error-message">Debes aceptar los términos y condiciones</span>
+                        </div>
+
+                        <!-- Botón de envío con spinner -->
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <span class="btn-text">Enviar mensaje</span>
+                            <span class="spinner"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-include-html="partials/footer.html"></div>
+
+    <!-- Modal de confirmación -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-icon">🎉</span>
+                <h2>¡Mensaje enviado!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Gracias por contactarte con <strong>Turismo Explorer</strong>.</p>
+                <p>Uno de nuestros asesores se comunicará contigo en las próximas 24 horas.</p>
+                <div class="modal-details">
+                    <p><strong>📧 Revisa tu correo:</strong> Te enviaremos un resumen de tu consulta.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal-close" id="closeModalBtn">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script>
+        (function() {
+            // ==================== VALIDACIÓN EN TIEMPO REAL ====================
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const modal = document.getElementById('confirmModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const mensajeTextarea = document.getElementById('mensaje');
+            const charCounter = document.querySelector('.char-counter');
+
+            // Contador de caracteres
+            if (mensajeTextarea && charCounter) {
+                mensajeTextarea.addEventListener('input', function() {
+                    const length = this.value.length;
+                    charCounter.textContent = `${length}/500 caracteres`;
+                    if (length > 450) {
+                        charCounter.style.color = '#f7b267';
+                    } else {
+                        charCounter.style.color = '';
+                    }
+                });
+            }
+
+            // Validación en tiempo real con eventos input/blur
+            const inputs = form.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                // Validar al escribir
+                input.addEventListener('input', function() {
+                    validateField(this);
+                });
+                // Validar al perder foco
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+            });
+
+            function validateField(field) {
+                const formGroup = field.closest('.form-group');
+                if (!formGroup) return;
+
+                if (field.tagName === 'SELECT') {
+                    if (field.required && field.value === '') {
+                        formGroup.classList.add('invalid');
+                        formGroup.classList.remove('valid');
+                    } else {
+                        formGroup.classList.add('valid');
+                        formGroup.classList.remove('invalid');
+                    }
+                } else if (field.type === 'checkbox') {
+                    const checkboxGroup = field.closest('.form-group');
+                    if (field.id === 'terminos') {
+                        if (!field.checked) {
+                            checkboxGroup.classList.add('invalid');
+                            checkboxGroup.classList.remove('valid');
+                        } else {
+                            checkboxGroup.classList.add('valid');
+                            checkboxGroup.classList.remove('invalid');
+                        }
+                    }
+                } else {
+                    // Para inputs normales, usar la validación de HTML5
+                    const isValid = field.checkValidity();
+                    if (isValid && field.value.trim() !== '') {
+                        formGroup.classList.add('valid');
+                        formGroup.classList.remove('invalid');
+                    } else if (field.value.trim() === '' && !field.required) {
+                        // Campo opcional vacío - sin validación
+                        formGroup.classList.remove('valid', 'invalid');
+                    } else {
+                        formGroup.classList.add('invalid');
+                        formGroup.classList.remove('valid');
+                    }
+                }
+            }
+
+            // ==================== ENVÍO DEL FORMULARIO CON SPINNER ====================
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Validar todos los campos antes de enviar
+                let isValid = true;
+                const allRequired = form.querySelectorAll('[required]');
+                allRequired.forEach(field => {
+                    if (!field.checkValidity()) {
+                        isValid = false;
+                        validateField(field);
+                        field.focus();
+                    }
+                });
+
+                // Validar términos específicamente
+                const terminosCheck = document.getElementById('terminos');
+                if (terminosCheck && !terminosCheck.checked) {
+                    isValid = false;
+                    const terminosGroup = terminosCheck.closest('.form-group');
+                    terminosGroup.classList.add('invalid');
+                }
+
+                if (!isValid) {
+                    // Mostrar mensaje de error general
+                    showTemporaryError('Por favor, completa todos los campos requeridos correctamente.');
+                    return;
+                }
+
+                // Mostrar spinner y deshabilitar botón
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
+
+                // Simular envío (2 segundos de carga)
+                setTimeout(() => {
+                    // Ocultar spinner
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+
+                    // Mostrar modal de confirmación
+                    showModal();
+
+                    // Resetear formulario
+                    form.reset();
+
+                    // Limpiar clases de validación
+                    document.querySelectorAll('.form-group').forEach(group => {
+                        group.classList.remove('valid', 'invalid');
+                    });
+
+                }, 2000);
+            });
+
+            // ==================== MODAL DE CONFIRMACIÓN ====================
+            function showModal() {
+                if (modal) {
+                    modal.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            function hideModal() {
+                if (modal) {
+                    modal.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', hideModal);
+            }
+
+            // Cerrar modal al hacer clic fuera del contenido
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        hideModal();
+                    }
+                });
+            }
+
+            // Cerrar modal con tecla ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal && modal.classList.contains('show')) {
+                    hideModal();
+                }
+            });
+
+            // Mensaje de error temporal
+            function showTemporaryError(message) {
+                let errorToast = document.querySelector('.error-toast');
+                if (!errorToast) {
+                    errorToast = document.createElement('div');
+                    errorToast.className = 'error-toast';
+                    document.body.appendChild(errorToast);
+                }
+                errorToast.textContent = message;
+                errorToast.classList.add('show');
+                setTimeout(() => {
+                    errorToast.classList.remove('show');
+                }, 3000);
+            }
+        })();
+    </script>
+</body>
+</html>

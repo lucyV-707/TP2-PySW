@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Destinos - Turismo Explorer</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+    <style>
+        /* Ajustes adicionales para asegurar el filtro CSS */
+        .filters-container {
+            position: relative;
+        }
+        
+        /* Los inputs deben estar OCULTOS pero en el mismo nivel que la galería */
+        .filter-inputs {
+            display: none;
+        }
+        
+        /* Los inputs reales se colocan aquí */
+        #filter-all, #filter-cultural, #filter-naturaleza, 
+        #filter-playa, #filter-gastronomico, #filter-religioso {
+            display: none;
+        }
+        
+        /* Selectores de filtro - LOS INPUTS DEBEN ESTAR ANTES DE .masonry-gallery */
+        #filter-all:checked ~ .masonry-gallery .destino-card { display: block; }
+        #filter-cultural:checked ~ .masonry-gallery .destino-card:not(.cultural) { display: none; }
+        #filter-naturaleza:checked ~ .masonry-gallery .destino-card:not(.naturaleza) { display: none; }
+        #filter-playa:checked ~ .masonry-gallery .destino-card:not(.playa) { display: none; }
+        #filter-gastronomico:checked ~ .masonry-gallery .destino-card:not(.gastronomico) { display: none; }
+        #filter-religioso:checked ~ .masonry-gallery .destino-card:not(.religioso) { display: none; }
+        
+        /* Estilos para los botones de filtro */
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            background: var(--bg-surface-soft);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+        /* Estado activo de los botones - usando :has() cuando esté disponible o JavaScript */
+        .filter-btn.active {
+            background: var(--primary);
+            color: #041014;
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div data-include-html="partials/header.html"></div>
+
+    <main class="filters-container">
+        <!-- ENCABEZADO DE PÁGINA -->
+        <section class="page-header">
+            <div class="container">
+                <div class="section-label">Explora el mundo</div>
+                <h1>Nuestros <span class="highlight">Destinos</span></h1>
+                <p>Descubre los mejores lugares para tu próxima aventura</p>
+            </div>
+        </section>
+
+        <!-- SISTEMA DE FILTRADO CON CSS PURO -->
+        <!-- IMPORTANTE: Los inputs DEBEN estar ANTES de .masonry-gallery y al mismo nivel -->
+        <div class="filter-inputs">
+            <input type="radio" name="filter" id="filter-all" value="all" checked>
+            <input type="radio" name="filter" id="filter-cultural" value="cultural">
+            <input type="radio" name="filter" id="filter-naturaleza" value="naturaleza">
+            <input type="radio" name="filter" id="filter-playa" value="playa">
+            <input type="radio" name="filter" id="filter-gastronomico" value="gastronomico">
+            <input type="radio" name="filter" id="filter-religioso" value="religioso">
+        </div>
+
+        <!-- BOTONES DE FILTRO (con labels que apuntan a los inputs) -->
+        <section class="filters-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Filtrar por categoría</h2>
+                    <p>Encuentra el destino perfecto según tus intereses</p>
+                </div>
+                
+                <div class="filter-buttons">
+                    <label for="filter-all" class="filter-btn" data-filter="all">📌 Todos</label>
+                    <label for="filter-cultural" class="filter-btn" data-filter="cultural">🏛️ Cultural</label>
+                    <label for="filter-naturaleza" class="filter-btn" data-filter="naturaleza">🌿 Naturaleza</label>
+                    <label for="filter-playa" class="filter-btn" data-filter="playa">☀️ Sol y Playa</label>
+                    <label for="filter-gastronomico" class="filter-btn" data-filter="gastronomico">🍜 Gastronómico</label>
+                    <label for="filter-religioso" class="filter-btn" data-filter="religioso">⛪ Religioso</label>
+                </div>
+
+                <!-- GALERÍA MASONRY - Debe ser HERMANA de los inputs (mismo nivel) -->
+                <div class="masonry-gallery">
+                    <!-- Destino 1 - Cultural -->
+                    <article class="destino-card cultural" data-category="cultural">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Machu Picchu">
+                            <div class="card-overlay">
+                                <h3>Machu Picchu</h3>
+                                <p>Perú - Cultural</p>
+                                <a href="#" class="btn-overlay">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-category-badge">🏛️ Cultural</span>
+                            <h3>Machu Picchu</h3>
+                            <p>Maravilla del mundo moderno, ciudadela inca enclavada en los Andes.</p>
+                            <div class="price-tag">Desde $899</div>
+                        </div>
+                    </article>
+
+                    <!-- Destino 2 - Naturaleza -->
+                    <article class="destino-card naturaleza" data-category="naturaleza">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Amazonas">
+                            <div class="card-overlay">
+                                <h3>Amazonas</h3>
+                                <p>Brasil - Naturaleza</p>
+                                <a href="#" class="btn-overlay">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-category-badge">🌿 Naturaleza</span>
+                            <h3>Amazonas</h3>
+                            <p>El pulmón del mundo, biodiversidad única y paisajes impresionantes.</p>
+                            <div class="price-tag">Desde $1,299</div>
+                        </div>
+                    </article>
+
+                    <!-- Destino 3 - Playa -->
+                    <article class="destino-card playa" data-category="playa">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cancún">
+                            <div class="card-overlay">
+                                <h3>Cancún</h3>
+                                <p>México - Sol y Playa</p>
+                                <a href="#" class="btn-overlay">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-category-badge">☀️ Sol y Playa</span>
+                            <h3>Cancún</h3>
+                            <p>Aguas turquesas, arena blanca y vida nocturna inigualable.</p>
+                            <div class="price-tag">Desde $749</div>
+                        </div>
+                    </article>
+
+                    <!-- Destino 4 - Cultural -->
+                    <article class="destino-card cultural" data-category="cultural">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/161477/chichen-itza-castle-pyramid-ruins-mexico-161477.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Chichén Itzá">
+                            <div class="card-overlay">
+                                <h3>Chichén Itzá</h3>
+                                <p>México - Cultural</p>
+                                <a href="#" class="btn-overlay">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-category-badge">🏛️ Cultural</span>
+                            <h3>Chichén Itzá</h3>
+                            <p>Imponente pirámide maya, una de las nuevas 7 maravillas del mundo.</p>
+                            <div class="price-tag">Desde $649</div>
+                        </div>
+                    </article>
+
+                    <!-- Destino 5 - Gastronómico -->
+                    <article class="destino-card gastronomico" data-category="gastronomico">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/1267325/pexels-photo-1267325.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Oaxaca">
+                            <div class="card-overlay">
+                                <h3>Oaxaca</h3>
+                                <p>México - Gastronómico</p>
+                                <a href="#" class="btn-overlay">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-category-badge">🍜 Gastronómico</span>
+                            <h3>Oaxaca</h3>
+                            <p>Capital gastronómica de México, moles, tlayudas y mezcal.</p>
+                            <div class="price-tag">Desde $599</div>
+                        </div>
+                    </article>
+
+                    <!-- Destino 6 - Religioso -->
+                    <article class="destino-card religioso" data-category="religioso">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/2575061/pexels-photo-2575061.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vaticano">
+                            <div class="card-overlay">
+                                <h3>Ciudad del Vaticano</h3>
+                                <p>Italia - Religioso</p>
+                                <a href="#" class="btn-overlay">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-category-badge">⛪ Religioso</span>
+                            <h3>Ciudad del Vaticano</h3>
+                            <p>Corazón de la cristiandad, Basílica de San Pedro y Capilla Sixtina.</p>
+                            <div class="price-tag">Desde $1,499</div>
+                        </div>
+                    </article>
+
+                    <!-- Destino 7 - Naturaleza -->
+                    <article class="destino-card naturaleza" data-category="naturaleza">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/2082103/pexels-photo-2082103.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Torres del Paine">
+                            <div class="card-overlay">
+                                <h3>Torres del Paine</h3>
+                                <p>Chile - Naturaleza</p>
+                                <a href="#" class="btn-overlay">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-category-badge">🌿 Naturaleza</span>
+                            <h3>Torres del Paine</h3>
+                            <p>Parque nacional con montañas, glaciares y lagos turquesa.</p>
+                            <div class="price-tag">Desde $1,899</div>
+                        </div>
+                    </article>
+
+                    <!-- Destino 8 - Playa -->
+                    <article class="destino-card playa" data-category="playa">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bora Bora">
+                            <div class="card-overlay">
+                                <h3>Bora Bora</h3>
+                                <p>Polinesia - Sol y Playa</p>
+                                <a href="#" class="btn-overlay">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-category-badge">☀️ Sol y Playa</span>
+                            <h3>Bora Bora</h3>
+                            <p>Paraíso tropical con overwater bungalows y laguna cristalina.</p>
+                            <div class="price-tag">Desde $2,499</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABLA RESPONSIVA DE PRECIOS -->
+        <section class="pricing-table-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Comparativa de Precios por Destino</h2>
+                    <p>Elige la mejor opción para tu presupuesto</p>
+                </div>
+                <div class="table-responsive">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Destino</th>
+                                <th>Categoría</th>
+                                <th>Duración</th>
+                                <th>Precio base</th>
+                                <th>Todo incluido</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Machu Picchu</strong></td><td><span class="category-badge cultural">Cultural</span></td><td>5 días</td><td class="price-cell">$899</td><td class="price-cell">$1,299</td><td><button class="btn-reservar" data-destino="Machu Picchu">Reservar →</button></td></tr>
+                            <tr><td><strong>Amazonas</strong></td><td><span class="category-badge naturaleza">Naturaleza</span></td><td>7 días</td><td class="price-cell">$1,299</td><td class="price-cell">$1,799</td><td><button class="btn-reservar" data-destino="Amazonas">Reservar →</button></td></tr>
+                            <tr><td><strong>Cancún</strong></td><td><span class="category-badge playa">Sol y Playa</span></td><td>4 días</td><td class="price-cell">$749</td><td class="price-cell">$1,099</td><td><button class="btn-reservar" data-destino="Cancún">Reservar →</button></td></tr>
+                            <tr><td><strong>Chichén Itzá</strong></td><td><span class="category-badge cultural">Cultural</span></td><td>3 días</td><td class="price-cell">$649</td><td class="price-cell">$949</td><td><button class="btn-reservar" data-destino="Chichén Itzá">Reservar →</button></td></tr>
+                            <tr><td><strong>Oaxaca</strong></td><td><span class="category-badge gastronomico">Gastronómico</span></td><td>4 días</td><td class="price-cell">$599</td><td class="price-cell">$899</td><td><button class="btn-reservar" data-destino="Oaxaca">Reservar →</button></td></tr>
+                            <tr><td><strong>Ciudad del Vaticano</strong></td><td><span class="category-badge religioso">Religioso</span></td><td>4 días</td><td class="price-cell">$1,499</td><td class="price-cell">$1,999</td><td><button class="btn-reservar" data-destino="Ciudad del Vaticano">Reservar →</button></td></tr>
+                            <tr><td><strong>Torres del Paine</strong></td><td><span class="category-badge naturaleza">Naturaleza</span></td><td>6 días</td><td class="price-cell">$1,899</td><td class="price-cell">$2,499</td><td><button class="btn-reservar" data-destino="Torres del Paine">Reservar →</button></td></tr>
+                            <tr><td><strong>Bora Bora</strong></td><td><span class="category-badge playa">Sol y Playa</span></td><td>5 días</td><td class="price-cell">$2,499</td><td class="price-cell">$3,299</td><td><button class="btn-reservar" data-destino="Bora Bora">Reservar →</button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOLTIPS EXPLICATIVOS -->
+        <section class="tooltips-info">
+            <div class="container">
+                <h3>¿Qué incluye cada tipo de paquete?</h3>
+                <div class="tooltips-grid">
+                    <div class="tooltip-card">
+                        <div class="tooltip-card-header">
+                            <div class="tooltip-card-icon">✈️</div>
+                            <h4>Precio Base</h4>
+                        </div>
+                        <p>Incluye:</p>
+                        <ul>
+                            <li>✅ Vuelos ida y vuelta</li>
+                            <li>✅ Alojamiento seleccionado</li>
+                            <li>✅ Traslados aeropuerto-hotel</li>
+                        </ul>
+                    </div>
+                    <div class="tooltip-card featured">
+                        <div class="tooltip-card-header">
+                            <div class="tooltip-card-icon">🌟</div>
+                            <h4>Todo Incluido</h4>
+                        </div>
+                        <p>Todo lo anterior +</p>
+                        <ul>
+                            <li>✅ Todas las comidas</li>
+                            <li>✅ Excursiones guiadas</li>
+                            <li>✅ Seguro de viaje premium</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-include-html="partials/footer.html"></div>
+
+    <!-- Modal de reserva -->
+    <div id="bookingModal" class="booking-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Reservar viaje</h3>
+                <button class="modal-close" id="closeModalBtn">×</button>
+            </div>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cargar header y footer
+            fetch('partials/header.html').then(r => r.text()).then(data => {
+                const headerDiv = document.querySelector('[data-include-html="partials/header.html"]');
+                if(headerDiv) headerDiv.outerHTML = data;
+            });
+            fetch('partials/footer.html').then(r => r.text()).then(data => {
+                const footerDiv = document.querySelector('[data-include-html="partials/footer.html"]');
+                if(footerDiv) footerDiv.outerHTML = data;
+            });
+            
+            // ACTIVE STATE PARA LOS BOTONES DE FILTRO (JavaScript ligero solo para UI)
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const filterInputs = {
+                all: document.getElementById('filter-all'),
+                cultural: document.getElementById('filter-cultural'),
+                naturaleza: document.getElementById('filter-naturaleza'),
+                playa: document.getElementById('filter-playa'),
+                gastronomico: document.getElementById('filter-gastronomico'),
+                religioso: document.getElementById('filter-religioso')
+            };
+            
+            function setActiveFilter(activeId) {
+                filterBtns.forEach(btn => {
+                    const forAttr = btn.getAttribute('for');
+                    if (forAttr === activeId) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Escuchar cambios en los inputs reales
+            Object.keys(filterInputs).forEach(key => {
+                const input = filterInputs[key];
+                if(input) {
+                    input.addEventListener('change', function() {
+                        if(this.checked) {
+                            setActiveFilter(this.id);
+                        }
+                    });
+                }
+            });
+            
+            // Inicializar estado activo
+            if(document.getElementById('filter-all').checked) {
+                setActiveFilter('filter-all');
+            }
+            
+            // Modal de reserva
+            const modal = document.getElementById('bookingModal');
+            const closeBtn = document.getElementById('closeModalBtn');
+            const modalContent = document.getElementById('modalContent');
+            
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            function openModal(destino) {
+                modalContent.innerHTML = `
+                    <div class="plan-details"><p><strong>${destino}</strong> - Elige tu plan</p></div>
+                    <div class="plan-selector">
+                        <div class="plan-options">
+                            <div class="plan-option"><input type="radio" name="plan" id="plan-base" value="base" checked><label for="plan-base"><span class="plan-name">Precio Base</span><span class="plan-price">$${getPrecioBase(destino)}</span></label></div>
+                            <div class="plan-option"><input type="radio" name="plan" id="plan-todo" value="todo"><label for="plan-todo"><span class="plan-name">Todo Incluido</span><span class="plan-price">$${getPrecioTodo(destino)}</span></label></div>
+                        </div>
+                    </div>
+                    <form id="bookingForm">
+                        <div class="form-group"><label>Nombre completo</label><input type="text" id="nombre" required></div>
+                        <div class="form-group"><label>Email</label><input type="email" id="email" required></div>
+                        <div class="form-group"><label>Fecha</label><input type="date" id="fecha" required></div>
+                        <button type="submit" class="modal-submit">Confirmar Reserva</button>
+                    </form>
+                `;
+                const form = document.getElementById('bookingForm');
+                if(form) {
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const nombre = document.getElementById('nombre').value;
+                        modalContent.innerHTML = `<div class="success-message"><div class="check-icon">✅</div><h3>¡Reserva Confirmada!</h3><p>Gracias ${nombre}, te contactaremos pronto.</p><button class="modal-submit" id="closeSuccessBtn">Cerrar</button></div>`;
+                        document.getElementById('closeSuccessBtn')?.addEventListener('click', closeModal);
+                    });
+                }
+                modal.classList.add('active');
+            }
+            
+            function getPrecioBase(d) { const p = {'Machu Picchu':899,'Amazonas':1299,'Cancún':749,'Chichén Itzá':649,'Oaxaca':599,'Ciudad del Vaticano':1499,'Torres del Paine':1899,'Bora Bora':2499}; return p[d]||0; }
+            function getPrecioTodo(d) { const p = {'Machu Picchu':1299,'Amazonas':1799,'Cancún':1099,'Chichén Itzá':949,'Oaxaca':899,'Ciudad del Vaticano':1999,'Torres del Paine':2499,'Bora Bora':3299}; return p[d]||0; }
+            
+            document.querySelectorAll('.btn-reservar').forEach(btn => {
+                btn.addEventListener('click', () => openModal(btn.getAttribute('data-destino')));
+            });
+            if(closeBtn) closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+        });
+    </script>
+</body>
+</html>
